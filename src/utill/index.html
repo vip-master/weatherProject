@@ -11,19 +11,35 @@
 </head>
 
 <body>
+    <svg class="header-icon-star">
+        <use href="./sprite.svg#rain"></use>
+    </svg>
     <div class="container">
         <form class="header-form">
             <input class="header-input" type="text" name="query" autocomplete="off" placeholder="Enter the city" />
+            <svg class="header-icon">
+                <use href="./sprite.svg#icon-location"></use>
+            </svg>
+            <svg class="header-icon-star">
+                <use href="./sprite.svg#icon-Star"></use>
+            </svg>
             <ul class="header-list"></ul>
-            <button class="header-slide"></button>
+            <button class="header-slide"><svg class="header-arrow">
+                    <use href="./sprite.svg#icon-arrow_to_right"></use>
+                </svg></button>
         </form>
 
         <div class="weather">
-            <div class="toggleWeather"></div>
+            <div class="weather-toggle"></div>
+            <ul class="weather-main"></ul>
+            <ul class="weather-moreInfo"></ul>
         </div>
 
+        <div class="firstpage"></div>
+
         <div class="charts">
-            <div class="openCharts"></div>
+            <div class="charts-open"></div>
+            <canvas id="charts-line" width="280" height="516"></canvas>
         </div>
     </div>
 </body>
