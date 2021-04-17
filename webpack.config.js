@@ -18,7 +18,7 @@ module.exports = (a, env) =>
             // 2. куда положить результирующий бандл
             output: {
                 filename: "[name].bundle.js",
-                assetModuleFilename: '[hash][ext][query]',
+                assetModuleFilename: '[name][ext]',
             },
             // 3. загрузчики (loaders)
             module: {
