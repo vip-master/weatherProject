@@ -12,20 +12,23 @@
 
 <body>
     <div class="container">
-        <form class="header-form">
-            <input class="header-input" type="text" name="query" autocomplete="off" placeholder="Enter the city" />
-            <svg class="header-icon">
-                <use href="./sprite.svg#icon-location"></use>
-            </svg>
-            <svg class="header-icon-star">
-                <use href="./sprite.svg#icon-Star"></use>
-            </svg>
+        <div class="header">
+            <form class="header-form">
+                <input class="header-input" type="text" name="query" autocomplete="off" placeholder="Enter the city" />
+                <svg class="header-icon">
+                    <use href="./sprite.svg#icon-location"></use>
+                </svg>
+                <svg class="header-icon-star">
+                    <use href="./sprite.svg#icon-Star"></use>
+                </svg>
+            </form>
             <ul class="header-list"></ul>
-            <button class="header-slide"><svg class="header-arrow">
+            <button class="header-slide">
+                <svg class="header-arrow">
                     <use href="./sprite.svg#icon-arrow_to_right"></use>
                 </svg>
             </button>
-        </form>
+        </div>
 
         <div class="weather">
             <div class="weather-toggle"></div>
