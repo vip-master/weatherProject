@@ -6,3 +6,9 @@
 // document.body.insertAdjacentHTML("beforeend", `<svg>
 //         <use href="${sprite}#icon-clouds-and-sun"></use>
 //     </svg>`)
+
+const hello = async() => {
+    await Promise.resolve()
+}
+
+hello()

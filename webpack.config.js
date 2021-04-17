@@ -23,9 +23,14 @@ module.exports = (a, env) =>
             // 3. загрузчики (loaders)
             module: {
                 rules: [{
-                        test: /\.js$/, // регулярное выражение
-                        exclude: /node_modules/, // через указ папку свойства не прогонять
-                        use: ["babel-loader"],
+                        test: /\.m?js$/,
+                        exclude: /node_modules/,
+                        use: {
+                            loader: "babel-loader",
+                            options: {
+                                presets: ['@babel/preset-env']
+                            }
+                        }
                     },
                     {
                         test: /\.html$/,
