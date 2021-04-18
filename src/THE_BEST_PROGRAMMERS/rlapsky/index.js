@@ -5,3 +5,8 @@
 // document.body.insertAdjacentHTML("beforeend", `<svg>
 //         <use href="./sprite.svg#icon-clouds-and-sun"></use>
 //     </svg>`)
+
+ function rendFirst(){
+console.log("rlapsky");
+}
+export {rendFirst}
