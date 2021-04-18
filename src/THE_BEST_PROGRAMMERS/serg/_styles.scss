@@ -1,0 +1,94 @@
+// Фон подключать так
+// body {
+//     background-image: url(./THE_BEST_PROGRAMERS/_your_name/images/arms.jpg);
+// }
+// обратите внимание используется относительный путь в Вашу папку с Вашими изображениями
+// Тут не использовать спрайт!
+.weather-moreInfo {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.galery {
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+}
+p {
+  margin: 0px;
+}
+.galery_item {
+  margin-bottom: 15px;
+  text-align: center;
+  margin-right: 10px;
+  list-style: none;
+  width: 120px;
+  height: 218px;
+  left: 190px;
+  top: 588px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.54);
+  box-sizing: border-box;
+  border-radius: 25px;
+}
+.weather-main {
+  display: flex;
+  padding-top: 273px;
+  margin-bottom: 49px;
+  padding-left: 15px;
+
+  background: rgba(16, 33, 54, 0.8);
+  box-shadow: 0px 8px 43px rgba(16, 33, 54, 0.6);
+  border-radius: 34px;
+
+  @media (min-width: $tablet) {
+    width: 620px;
+    height: 571px;
+    .container {
+      max-width: $tablet;
+      padding: 0 74px 0 74px;
+    }
+  }
+  @media (min-width: $mobile) {
+    width: 280px;
+    height: 540px;
+    .container {
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      padding: 0 20px 0 20px;
+    }
+  }
+  @media (min-width: $desktop) {
+    justify-content: center;
+    width: 1060px;
+    height: 556px;
+    .container {
+      max-width: $desktop;
+      padding: 0 110px 0 110px;
+    }
+  }
+}
+.galery_item_time {
+  color: rgba(255, 255, 255, 0.2);
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+.galery_svg {
+  fill: rgba(255, 255, 255, 0.54);
+}
+
+.galery_item_temperature {
+  font-size: 25px;
+  line-height: 30px;
+  color: #ff6b09;
+}
+.galery_item_barometer {
+  margin: 0px;
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.peshka {
+  margin: 0px;
+}

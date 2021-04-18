@@ -1,0 +1,28 @@
+{{#each this}}
+<li class="galery_item">
+    <p class="galery_item_time">{{dt_txt}}</p>
+    <svg class="galery_svg" width=35px height=25px>
+        <use href="./sprite.svg#icon-weather"></use>
+    </svg>
+    <p class="galery_item_temperature">{{main.temp}} &deg</p>
+    <div class="galery_item_barometer">
+        <svg class="galery_svg" width=17px height=20px>
+            <use href="./sprite.svg#icon-barometer"></use>
+        </svg>
+        <p class="peshka">{{main.pressure}} mm</p>
+    </div>
+    <div class="galery_item_barometer">
+        <svg class="galery_svg" width=17px height=20px>
+            <use href="./sprite.svg#icon-humidity"></use>
+        </svg>
+        <p class="peshka">{{main.humidity}}%</p>
+    </div>
+    <div class="galery_item_barometer">
+        <svg class="galery_svg" width=17px height=20px>
+            <use href="./sprite.svg#icon-wind"></use>
+        </svg>
+        <p class="peshka">{{wind.speed}} m/s</p>
+    </div>
+
+</li>
+{{/each}}
