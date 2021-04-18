@@ -5,12 +5,13 @@
 // document.body.insertAdjacentHTML("beforeend", `<svg>
 //         <use href="./sprite.svg#icon-clouds-and-sun"></use>
 //     </svg>`)
-import {rendMore} from '../serg/index.js'
+import { rendMore } from '../serg/lib.js'
+
 function rendMain(data) {
-  rendMore(data)
-  console.log("wellcome from Ternopil");
+    rendMore(data)
+    console.log("wellcome from Ternopil");
 };
-export {rendMain};
+export { rendMain };
 // import api from './api.js';
 
 // import daysCard from './daysCard.hbs';
@@ -32,7 +33,7 @@ export {rendMain};
 //     const monthOnCards = [];
 
 //     for(let i = 0; i < data.list.length; i +=8) {
-    
+
 //       const weekDayNumber = new Date(data.list[i].dt * 1000).getDay();
 //       const weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 //       dayOnCards.push(weekDays[weekDayNumber]);        
@@ -44,7 +45,7 @@ export {rendMain};
 //       const monthNumber = new Date(data.list[i].dt * 1000).getMonth();
 //       const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul","Aug", "Sep", "Oct", "Nov", "Dec"];
 //       monthOnCards.push(months[monthNumber])
-    
+
 //     };
 
 //     console.log(dayOnCards);
@@ -56,16 +57,10 @@ export {rendMain};
 //     for(let i = 0; i < 8; i += 1) {
 //       temeprature.push(Math.round(data.list[i].main.temp));
 //     }
-    
+
 //     const min = Math.min( ...temeprature );
 //     const max = Math.max( ...temeprature );
 //     console.log(min);
 //     console.log(max);
-    
+
 //   });
-
-  
-
-
-
-
