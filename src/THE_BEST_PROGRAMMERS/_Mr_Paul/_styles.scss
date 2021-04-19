@@ -4,3 +4,88 @@
 // }
 // обратите внимание используется относительный путь в Вашу папку с Вашими изображениями
 // Тут не использовать спрайт!
+
+.days_list_item {
+  list-style: none;
+  text-align: center;
+  width: 82px;
+  height: 154px;
+}
+
+.weather-main {
+  padding-top: 40px;
+}
+
+.weather-list {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.weather-list {
+}
+
+.weather_icon {
+  width: 35px;
+  height: 35px;
+  margin-bottom: 10px;
+  fill: rgba(255, 255, 255, 0.54);
+}
+
+.days_list_item_day {
+  text-align: center;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: #ffffff;
+  opacity: 0.55;
+  margin-bottom: 15px;
+}
+
+.days_list_item_date {
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #ffffff;
+}
+
+.date {
+  margin-right: 5px;
+}
+
+.temperature-on-card {
+  display: flex;
+  justify-content: center;
+}
+
+.min-temp {
+  padding-right: 5px;
+  margin-right: 5px;
+  border-right: 1px solid #27384a;
+}
+
+.temp-txt {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: #767d85;
+}
+
+.temp-number {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #ff6b09;
+}
+
+.more_info_btn {
+  margin-top: 5px;
+  border: none;
+  background: transparent;
+  text-decoration-line: underline;
+  color: #ffffff;
+  opacity: 0.3;
+}
