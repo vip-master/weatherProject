@@ -1,9 +1,3 @@
-// Фон подключать так
-// body {
-//     background-image: url(./THE_BEST_PROGRAMMERS/_your_name/images/arms.jpg);
-// }
-// обратите внимание используется относительный путь в Вашу папку с Вашими изображениями
-// Тут не использовать спрайт!
 svg{
   stroke: none;
 }
@@ -132,6 +126,7 @@ color: rgba(255, 255, 255, 1);
 
 }
 .header-close{
+  stroke: rgba(255, 255, 255, 0.5);
   width: 10px;
   height: 10px;
   position: absolute;
@@ -169,6 +164,7 @@ position: absolute;
 top: 11px;
 left: 12px;
 }
+
 
 
 
