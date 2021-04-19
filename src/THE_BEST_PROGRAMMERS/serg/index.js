@@ -36,7 +36,7 @@ const render = function(allData) {
     console.log("render");
 
 
-    rendMain(JSON.parse(JSON.stringify(allData.list)))
+    rendMain(JSON.parse(JSON.stringify(allData)))
     rendFirst(JSON.parse(JSON.stringify(allData)))
     rendChart(JSON.parse(JSON.stringify(allData.list)))
 }
