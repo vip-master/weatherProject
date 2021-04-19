@@ -39,7 +39,7 @@ function formSubmit() {
     }
     api.fetchWeather(targetCity)
         .then(data => {
-            if (data.cod === '404') {
+            if (data.cod !== '200') {
                 inputHeader.value = ""
                 return
             }
@@ -64,8 +64,13 @@ starIcon.addEventListener('click', saveCity)
 
 function saveCity() {
     let newCity = inputHeader.value
-
-    if (localStorage.getItem('city') === null) {
+    api.fetchWeather(newCity)
+    .then(data=>{
+        if (data.cod === '404'){
+            inputHeader.value = ""
+            return
+        }
+      if (localStorage.getItem('city') === null) {
         localStorage.setItem('city', '[]');
     }
     if (localStorage.getItem('city').includes(newCity)) {
@@ -75,25 +80,25 @@ function saveCity() {
     allCity.push(newCity);
     localStorage.setItem('city', JSON.stringify(allCity))
     createFavoritCity(newCity)
-
+    })
 }
 
 function createFavoritCity(newCity) {
-    let liEl = `<li class="header-item">
-    <button class="header-btn"><span class="header-text">${newCity}</span>
-    <svg class="header-close">
-      <use href="sprite.svg#icon-cross"></use>
-  </svg>
-  </button>
-  </li>`
-    cityList.insertAdjacentHTML('beforeend', liEl)
+let liEl = `<li class="header-item">
+<button class="header-btn"><span class="header-text">${newCity}</span>
+<svg class="header-close">
+<use href="sprite.svg#icon-cross"></use>
+</svg>
+</button>
+</li>`
+cityList.insertAdjacentHTML('beforeend', liEl)
 }
+
 if (localStorage.getItem('city') !== null) {
     JSON.parse(localStorage.getItem('city')).forEach(el => {
         createFavoritCity(el)
     })
 }
-
 
 
 //________________________________________________________________
