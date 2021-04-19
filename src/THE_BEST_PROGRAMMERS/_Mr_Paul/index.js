@@ -26,8 +26,9 @@ import { rendMore } from '../serg/lib.js'
 
 function rendMain(data) {
     
-    console.log(data);
-    rendMore(data)
+    console.log('Mr_Paul');
+    const dayData = data.list[0];
+    rendMore(dayData)
     // const dayOnCards = [];
     // const dateOnCards = [];
     // const monthOnCards = [];
