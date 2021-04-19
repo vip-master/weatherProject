@@ -41,6 +41,7 @@ function formSubmit() {
         .then(data => {
             if (data.cod === '404') {
                 inputHeader.value = ""
+                return
             }
             const allData = { list: data.list, city: data.city }
             allData.list.forEach(el => {
