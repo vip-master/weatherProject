@@ -25,7 +25,7 @@ const weekDays = {
 }
 
 function rendMain(data) {
-    console.log(data);
+    
     console.log('Mr_Paul');
     const dayData = data.list[0];
     rendMore(dayData)
@@ -33,7 +33,9 @@ function rendMain(data) {
     const dayOnCards = [];
     const dateOnCards = [];
     const monthOnCards = [];
-    const iconOnCard = []; 
+    const iconOnCard = [];
+    const minTempOnCards = [];
+    const maxTempOnCards = [];
 
     data.list.forEach(el => {
         const justArr = el[0].dt.split(' ');
@@ -41,21 +43,31 @@ function rendMain(data) {
         dateOnCards.push(justArr[2]);
         monthOnCards.push(justArr[1])
         iconOnCard.push(el[0].weather[0].icon)
+
+        const oneDayTempMin = [];
+        const oneDayTempMax = [];
+        for (let i = 0; i < el.length; i++) {
+            oneDayTempMin.push(el[i].main.temp_min)
+            oneDayTempMax.push(el[i].main.temp_max)  
+        }
+        minTempOnCards.push(Math.round(Math.min( ...oneDayTempMin)));
+        maxTempOnCards.push(Math.round(Math.max( ...oneDayTempMax)));
     }); 
     
-
     class Card {
-        constructor(day, date, month, icon) {
+        constructor(day, date, month, icon, min, max) {
             this.day = day;
             this.date = date;
             this.month = month;
             this.icon = icon;
+            this.min = min;
+            this.max = max;
 
         };
     }
     const daysArray = [];
     for(let i = 0; i < dayOnCards.length; i +=1) {
-        const oneDay = new Card(weekDays[dayOnCards[i]], dateOnCards[i], monthOnCards[i], iconOnCard[i]);
+        const oneDay = new Card(weekDays[dayOnCards[i]], dateOnCards[i], monthOnCards[i], iconOnCard[i], minTempOnCards[i], maxTempOnCards[i]);
         daysArray.push(oneDay);
     }
 
