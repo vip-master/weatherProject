@@ -118,3 +118,4 @@ function renderCityWeather(e) {
         formSubmit()
     }
 }
+
