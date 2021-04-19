@@ -6,6 +6,7 @@
 //         <use href="./sprite.svg#icon-clouds-and-sun"></use>
 //     </svg>`)
 import tempFirst from './templates/firstpage-up.hbs'
+import tempBox from './templates/firstpage-box.hbs'
 function rendFirst(data){
     console.log(data);
     const toDay = data.list[0]
@@ -14,8 +15,7 @@ function rendFirst(data){
     newEl.min= el.main.temp_min
     newEl.max= el.main.temp_max
     return newEl
-   })    
-   console.log(toDay);
+   })
    let totalMin = 0;
    let totalMax = 0;
    toDay.forEach(el => {
@@ -37,8 +37,29 @@ function rendFirst(data){
         document.querySelector('.today__max__temp').textContent=`${tempMax}`
     }
     else{
-        document.querySelector(".firstpage-up").innerHTML= tempFirst(up)
-    }
+        document.querySelector(".firstpage-up").innerHTML= tempFirst(up);
+    };
+        const toDate = new Date().toDateString().split(' ');
+        const time  = new Date().toLocaleTimeString();
+        const month = toDate[1];
+        const dayNumber = toDate[2];
+        const dayOfWeek = toDate[0];
+        const sunrise = data.city.sunrise;
+        const sunset = data.city.sunset;
+        const down = {time,month,dayNumber,dayOfWeek,sunrise,sunset};
+        if(document.querySelector(".firstpage-box").innerHTML){
+            document.querySelector('.today-list__number').textContent=`${dayNumber} ${dayOfWeek}`
+            document.querySelector('./today-list__dayOfWeek').textContent=`${month}`
+            document.querySelector('./today-list__time').textContent=`${time}`
+            document.querySelector('./today-list__sunrice').textContent=`${sunrise}`
+            document.querySelector('./today-list__sunset').textContent=`${sunset}`
+        }
+        else {
+            document.querySelector('.firstpage-box').innerHTML= tempBox(down);
+        }
+        
+        console.log(toDate);
+
 }
  
 
