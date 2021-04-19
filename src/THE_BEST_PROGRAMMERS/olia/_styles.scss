@@ -88,9 +88,9 @@ color: #000000;
 list-style: none;
 }
 .header-list{
+  height: 30px;
   display: flex;
   margin-left: 20px;
-  overflow: hidden;
   @media (min-width:$tablet) {
     margin-left: 80px;
   }
