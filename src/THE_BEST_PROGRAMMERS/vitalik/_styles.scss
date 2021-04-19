@@ -4,3 +4,12 @@
 // }
 // обратите внимание используется относительный путь в Вашу папку с Вашими изображениями
 // Тут не использовать спрайт!
+.charts{
+    background-color: rgba(16, 33, 54, 0.8);
+    box-shadow: 0px 8px 43px rgba(16, 33, 54, 0.6);
+border-radius: 34px;
+}
+.button-chart-close{
+     background-color: rgba(16, 33, 54, 0.8);
+     color:#FF6B09;
+}
