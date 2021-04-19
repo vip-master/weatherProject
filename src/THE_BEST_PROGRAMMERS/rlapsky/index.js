@@ -40,6 +40,7 @@ function rendFirst(data){
         document.querySelector(".firstpage-up").innerHTML= tempFirst(up)
     }
 }
+ 
 
 
 export {rendFirst}
