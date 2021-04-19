@@ -32,10 +32,12 @@ const magic = (arr) => {
 }
 
 const render = function(allData) {
-    console.log(magic(allData.list));
+    allData.list = magic(allData.list)
+    console.log("render");
+
+
     rendMain(JSON.parse(JSON.stringify(allData.list)))
     rendFirst(JSON.parse(JSON.stringify(allData)))
     rendChart(JSON.parse(JSON.stringify(allData.list)))
-    console.log("render");
 }
 export { render }
