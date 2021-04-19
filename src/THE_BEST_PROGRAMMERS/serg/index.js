@@ -14,10 +14,13 @@ import { rendFirst } from '../rlapsky/index.js'
 import { rendChart } from '../vitalik/index.js'
 
 
-const render = function(allData) {
-    rendMain(allData.list)
-    rendFirst(allData)
-    rendChart(allData.list)
+
+const render = function (allData) {
+    
+    rendMain(JSON.parse(JSON.stringify(allData.list)))
+    rendFirst(JSON.parse(JSON.stringify(allData)))
+    rendChart(JSON.parse(JSON.stringify(allData.list)))
     console.log("render");
 }
 export { render }
+
