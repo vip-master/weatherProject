@@ -1,16 +1,16 @@
 <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <defs>
 <symbol id="icon-arrow_to_down" viewBox="0 0 32 32">
-<path fill="none" stroke="#000" stroke-width="4.8" d="M28.8 8l-12.8 12.8-12.8-12.8"></path>
+<path stroke-width="4.8" d="M28.8 8l-12.8 12.8-12.8-12.8"></path>
 </symbol>
 <symbol id="icon-arrow_to_left" viewBox="0 0 32 32">
-<path fill="none" stroke="#000" stroke-width="4.8" d="M24 28.8l-12.8-12.8 12.8-12.8"></path>
+<path stroke-width="4.8" d="M24 28.8l-12.8-12.8 12.8-12.8"></path>
 </symbol>
 <symbol id="icon-arrow_to_right" viewBox="0 0 32 32">
-<path fill="none" stroke="#000" stroke-width="4.8" d="M8 3.2l12.8 12.8-12.8 12.8"></path>
+<path stroke-width="4.8" d="M8 3.2l12.8 12.8-12.8 12.8"></path>
 </symbol>
 <symbol id="icon-arrow_to_up" viewBox="0 0 32 32">
-<path fill="none" stroke="#000" stroke-width="4.8" d="M3.2 24l12.8-12.8 12.8 12.8"></path>
+<path stroke-width="4.8" d="M3.2 24l12.8-12.8 12.8 12.8"></path>
 </symbol>
 <symbol id="icon-barometer" viewBox="0 0 32 32">
 <path d="M18.489 4.121c0.207-0.391 0.324-0.837 0.324-1.307-0.002-1.553-1.26-2.811-2.812-2.813h-0c-1.552 0.002-2.81 1.26-2.812 2.812v0c0 0.472 0.117 0.917 0.324 1.307-6.565 1.179-11.561 6.932-11.561 13.83 0 7.747 6.302 14.050 14.050 14.050s14.050-6.303 14.050-14.050c0-6.898-4.997-12.652-11.561-13.829zM16 1.874c0.493 0.032 0.88 0.439 0.88 0.937s-0.388 0.905-0.878 0.937l-0.003 0c-0.493-0.032-0.88-0.439-0.88-0.937s0.388-0.905 0.878-0.937l0.003-0zM16 30.124c-6.714 0-12.176-5.462-12.176-12.175s5.462-12.176 12.176-12.176 12.176 5.462 12.176 12.176c0 6.713-5.462 12.175-12.176 12.175z"></path>
