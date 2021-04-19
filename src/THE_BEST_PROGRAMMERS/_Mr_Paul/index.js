@@ -7,57 +7,59 @@
 //     </svg>`)
 import { rendMore } from '../serg/lib.js'
 
-// import daysCard from './daysCard.hbs';
+import daysCard from './daysCard.hbs';
 
-// const weatherList = document.querySelector('.weather-list')
+const weatherList = document.querySelector('.weather-list')
 
 // document.body.insertAdjacentHTML("beforeend",
 // `<h2`)
 
-// const weekDays = {
-//     'Sun': 'Sunday',
-//     'Mon': 'Monday',
-//     'Tue': 'Tuesday',
-//     'Wed': 'Wednesday',
-//     'Thu': 'Thursday',
-//     'Fri': 'Friday',
-//     'Sat': 'Saturday',
-// }
+const weekDays = {
+    'Sun': 'Sunday',
+    'Mon': 'Monday',
+    'Tue': 'Tuesday',
+    'Wed': 'Wednesday',
+    'Thu': 'Thursday',
+    'Fri': 'Friday',
+    'Sat': 'Saturday',
+}
 
 function rendMain(data) {
-    
+    console.log(data);
     console.log('Mr_Paul');
     const dayData = data.list[0];
     rendMore(dayData)
-    // const dayOnCards = [];
-    // const dateOnCards = [];
-    // const monthOnCards = [];
-    // const iconOnCard = []; 
-    // for(let i = 0; i < data.length; i +=8) {
-    //     const justArr = data[i].dt.split(' ');
-    //     dayOnCards.push(justArr[0]);
-    //     dateOnCards.push(justArr[2]);
-    //     monthOnCards.push(justArr[1])
-    //     iconOnCard.push(data[i].weather[0].icon)
-    // };
+    
+    const dayOnCards = [];
+    const dateOnCards = [];
+    const monthOnCards = [];
+    const iconOnCard = []; 
 
-    // class Card {
-    //     constructor(day, date, month, icon) {
-    //         this.day = day;
-    //         this.date = date;
-    //         this.month = month;
-    //         this.icon = icon;
+    data.list.forEach(el => {
+        const justArr = el[0].dt.split(' ');
+        dayOnCards.push(justArr[0]);
+        dateOnCards.push(justArr[2]);
+        monthOnCards.push(justArr[1])
+        iconOnCard.push(el[0].weather[0].icon)
+    }); 
+    
 
-    //     };
-    // }
-    // const daysArray = [];
-    // for(let i = 0; i < dayOnCards.length; i +=1) {
-    //     const oneDay = new Card(weekDays[dayOnCards[i]], dateOnCards[i], monthOnCards[i], iconOnCard[i]);
-    //     daysArray.push(oneDay);
-    // }
-    // console.log(iconOnCard);
+    class Card {
+        constructor(day, date, month, icon) {
+            this.day = day;
+            this.date = date;
+            this.month = month;
+            this.icon = icon;
 
-    // weatherList.innerHTML = daysCard(daysArray);
+        };
+    }
+    const daysArray = [];
+    for(let i = 0; i < dayOnCards.length; i +=1) {
+        const oneDay = new Card(weekDays[dayOnCards[i]], dateOnCards[i], monthOnCards[i], iconOnCard[i]);
+        daysArray.push(oneDay);
+    }
+
+    weatherList.innerHTML = daysCard(daysArray);
 };
 
 
