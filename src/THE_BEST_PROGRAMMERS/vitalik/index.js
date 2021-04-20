@@ -12,12 +12,35 @@ import Chart from 'chart.js/auto';
 function rendChart(data) {
     console.log('vitalik')
     console.log(data);
-    const Temperature = data[0,7]
-    console.log(Temperature);
-}
-// const Temperature = data.map(temp => temp[0]);
-// console.log(Temperature);
-Chart.defaults.font.size = 14;
+   
+    const grafikTemperature = data.map(temperature => {
+        return temperature[0]
+    })
+    console.log(grafikTemperature);
+    const temp = [];
+    const humidity = [];
+    const windSpeed = [];
+    const pressure = [];
+    grafikTemperature.forEach(element => {
+        temp.push(element.main.temp);
+        humidity.push((element.main.humidity));
+        pressure.push((element.main.pressure));
+       windSpeed.push(element.wind.speed)
+    });
+    
+  
+    // const Temperature = data[0,7]
+    // console.log(Temperature);
+    
+    
+    
+    const buttonChart = document.querySelector('.charts-open');
+    buttonChart.innerHTML = `<div>
+    <p><button class="button-chart-close">Hide Chart<svg width="28px" height="28px">
+                <use href="./sprite.svg#icon-arrow_to_up"></use>
+            </svg></button></p>
+</div>`;
+    Chart.defaults.font.size = 14;
 const arr = ['16.04','17.04','18.04','19.04','20.04']
 new Chart(document.getElementById("charts-line"), {
     type: 'line',
@@ -25,24 +48,24 @@ new Chart(document.getElementById("charts-line"), {
         labels: [...arr],
         datasets: [{
             
-            data: [-5, -4.5, -4, -3.5, -3, 2.5, -2, -1.5, -1],
+            data: [...temp],
             color: '#FFFFFF',
             label: "— Temperature, C° ",
             borderColor: "#FF6B09",
             fill: false
         }, {
-            data: [-5, -4.5, -4, -3.5, -3, 2.5, -2, -1.5, -1],
+            data: [...humidity],
             label: "— Humidity, % ",
             borderColor: "#0906EB",
             fill: false,
             
         }, {
-            data: [-5, -4.5, -4, -3.5, -3, 2.5, -2, -1.5, -1],
+            data: [...windSpeed],
             label: "— Wind Speed, m/s ",
             borderColor: "#EA9A05",
             fill: false
         }, {
-            data: [-5, -4.5, -4, -3.5, -3, 2.5, -2, -1.5, -1],
+            data: [...pressure],
             label: "— Atmosphere Pressure, m/m",
             borderColor: "#067806",
             fill: false
@@ -108,14 +131,13 @@ new Chart(document.getElementById("charts-line"), {
         
     });
 
+}
+// const Temperature = data.map(temp => temp[0]);
+// console.log(Temperature);
+
 
 export { rendChart };
-const buttonChart = document.querySelector('.charts-open');
-buttonChart.innerHTML=`<div>
-    <p><button class="button-chart-close">Hide Chart<svg width="28px" height="28px">
-                <use href="./sprite.svg#icon-arrow_to_up"></use>
-            </svg></button></p>
-</div>`
+
 
     // options: {
      
