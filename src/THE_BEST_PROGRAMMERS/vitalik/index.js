@@ -50,16 +50,9 @@ new Chart(document.getElementById("charts-line"), {
         ]
     },
     options: {
-         layout: {
-            padding: {
-                 left: 80,
-                 reight: 180,
-                 top: 26,
-                botton:40,
-            }
-        },
-            responsive: true,
-            maintainAspectRatio: false,
+     
+            // responsive: true,
+            // maintainAspectRatio: true,
             scales: {
                 y: {
                     // display: true,
@@ -91,9 +84,7 @@ new Chart(document.getElementById("charts-line"), {
             plugins:{
                 legend:{
                     position: 'top',
-                    align: 'start',
-                    display: 'flex',
-                    
+                    align: 'center',
     
                     labels: {
                         color: 'rgba(255, 255, 255, 0.5)',
@@ -116,21 +107,74 @@ new Chart(document.getElementById("charts-line"), {
         }
         
     });
-const buttonChart = document.querySelector('#charts-line');
-buttonChart.innerHTML=`<div><p><button class="button-chart-close">Hide Chart <svg width="28"height="28"><use href="./sprite.svg#icon-arrow_to_up ></use></svg></button></p></div>`
-  
-         
-         
-//  function buttonChart() {
-//      document.querySelector('#charts-line').innerHTML=`   <div> <p><button>Hide Chart <svg>   <use href="./sprite.svg#icon-arrow_to_up"></use></svg></button></p></div>`
-         
-   
-      
-//  }
-
-export { rendChart }
 
 
+export { rendChart };
+const buttonChart = document.querySelector('.charts-open');
+buttonChart.innerHTML=`<div>
+    <p><button class="button-chart-close">Hide Chart<svg width="28px" height="28px">
+                <use href="./sprite.svg#icon-arrow_to_up"></use>
+            </svg></button></p>
+</div>`
+
+    // options: {
+     
+    //         // responsive: true,
+    //         // maintainAspectRatio: true,
+    //         scales: {
+    //             y: {
+    //                 // display: true,
+    //                 // title: {
+    //                 //     display: true,
+    //                 //     text:'Value of Indicators',
+    //                 //     color: 'rgba(255, 255, 255, 0.5)',
+    //                 //     font:{
+    //                 //         family: 'Lato',
+    //                 //         size: 12,
+    //                 //         weight: 400,
+    //                 //     },
+    //                 //     padding:{bottom:10}
+    //                 // },
+    //                 stacked: true,
+    //                 beginAtZero: false,
+    //                 gridLines: {
+    //                     display: true,
+    //                     color: "rgba(255,99,132,0.2)",
+    //                 }
+    //             },
+                
+    //         x: {
+    //             gridLines: {
+    //                 display: false,
+    //             }
+    //         }
+    //         },
+    //         plugins:{
+    //             legend:{
+    //                 position: 'top',
+    //                 align: 'center',
+    
+    //                 labels: {
+    //                     color: 'rgba(255, 255, 255, 0.5)',
+    //                     boxWidth: 10,
+    //                     boxHeight:10,
+    //                     },
+    //             },
+    //             title:{
+    //                 display: true,
+    //                 text: 'AVERAGE:',
+    //                 color: 'rgba(255, 255, 255, 0.5)',
+    //                 align: 'start',
+    //                 font: {
+    //                     size: 12,
+    //                     family: "Lato",
+    //                     weight: 400,
+    //                     },
+    //             },
+    //         },
+    //     }
+        
+    // });
 
 
 
