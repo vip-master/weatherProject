@@ -1,6 +1,339 @@
-// Фон подключать так
-// body {
-//     background-image: url(./THE_BEST_PROGRAMMERS/_your_name/images/arms.jpg);
-// }
-// обратите внимание используется относительный путь в Вашу папку с Вашими изображениями
-// Тут не использовать спрайт!
+
+.today {
+    text-align: center;
+    margin: 45px auto 31px auto;
+    padding: 30px 56px;
+    background: #102136;
+    box-shadow: 0px 5px 33px rgba(16, 33, 54, 0.6);
+    border-radius: 34px;
+}
+.today__svg{
+    width: 35px;
+    height: 35px;
+}
+.today__city {
+    padding-top: 10px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #767D85;
+}
+
+
+.today__box {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.today__temp {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 45px;
+    line-height: 54px;
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
+}
+
+.today__min__max {
+    display: flex;
+}
+
+.today__min {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    margin-right: 10px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.today__min__text {
+    font-size: 14px;
+    line-height: 17px;
+    color: #767D85;
+}
+
+.today__min__temp {
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+}
+
+.today__max {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    padding-left: 10px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    border-left: 1px solid #27384A;
+}
+
+.today__max__text {
+    font-size: 14px;
+    line-height: 17px;
+    color: #767D85;
+}
+
+.today__max__temp {
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+}
+
+.weather-toggle {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.weather-toggle-btn1 {
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    margin-right: 9px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 6px 36px;
+    border: none;
+}
+
+.weather-toggle-btn2 {
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    margin-left: 9px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 6px 36px;
+    border: none;
+}
+
+.current {
+    background: #FFFFFF;
+}
+
+.today-info {
+    margin: 30px auto 44px auto;
+    padding: 30px  56px;
+    background: rgba(16, 33, 54, 0.8);
+    border-radius: 34px;
+    color: #FFFFFF;
+}
+
+.today-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.today-list__item {
+    display: flex;
+    justify-content: center;
+    font-family: Lato;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0.04em;
+}
+
+.today-list__item__svg{
+    width: 20px;
+    height: 20px;
+}
+
+
+.today-list__number {
+    margin: 0 auto;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 45px;
+    line-height: 54px;
+    letter-spacing: 0.04em;
+}
+
+.today-list__dayOfWeek {
+    padding-right: 10px;
+    margin-top: 13px;
+}
+
+.today-list__time {
+    padding-left: 10px;
+    margin-top: 13px;
+}
+
+.today-list__sunrice {
+    padding-right: 10px;
+    margin-top: 25px;
+}
+
+.today-list__sunset {
+    margin-top: 25px;
+    padding-left: 10px;
+}
+
+.quotes {
+    margin-left: auto;
+    width: 280px;
+    margin-top: 43.59;
+    font-family: Lato;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: right;
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
+}
+
+.quotes__autor {
+    font-size: 18px;
+    line-height: 22px;
+    margin-top: 15px;
+    font-style: normal;
+}
+
+@media screen and (min-width: 480px) {
+    .today {
+        width: 420px;
+    }
+
+    .today-info {
+        width: 420px;
+    }
+
+    .quotes {
+        margin-right: 20px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .today {
+        margin: 110px auto 40px auto;
+        padding: 29px 0px 36px 0px;
+        width: 500px;
+    }
+
+    .today__box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .today__city {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .today__min__max {
+        margin-top: 16px;
+    }
+
+    .today__min {
+        margin-right: 20px;
+    }
+
+    .today__min__text {
+        font-size: 18px;
+        line-height: 22px;
+        margin-bottom: 6px;
+    }
+
+    .today__min__temp {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .today__max {
+        padding-left: 20px;
+        
+    }
+
+    .today__max__text {
+        font-size: 18px;
+        line-height: 22px;
+        margin-bottom: 6px;
+    }
+
+    .today__max__temp {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .today__temp {
+        font-size: 90px;
+        line-height: 108px;
+    }
+
+    .today-info {
+        width: 500px;
+        margin: 40px auto 63px auto;
+        padding: 60px 0px 38px 0px;
+    }
+
+    .today-list__item {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .today-list__number {
+        font-size: 90px;
+        line-height: 108px;
+        text-align: center;
+    }
+
+    .quotes {
+        width: 379px;
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 26px;
+    }
+
+    .quotes__autor {
+        text-align: right;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .today {
+        margin: 92px 0px 21px 720px;
+        border-radius: 34px 0px 0px 34px;
+    }
+
+    .today-info {
+        width: 630px;
+        margin: 65px 0px 0px -120px;
+        padding: 60px 0px 90px 0px;
+        border-radius: 0px 34px 0px 0px;
+    }
+
+    .quotes {
+        position: absolute;
+        right: 110px;
+        top: 702px;
+    }
+}

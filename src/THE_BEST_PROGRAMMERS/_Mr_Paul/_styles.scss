@@ -4,3 +4,208 @@
 // }
 // обратите внимание используется относительный путь в Вашу папку с Вашими изображениями
 // Тут не использовать спрайт!
+
+.weather {
+  position: relative;
+}
+
+.days_list_item {
+  list-style: none;
+  text-align: center;
+  width: 82px;
+  height: 154px;
+}
+
+.weather-main {
+  padding-top: 75px;
+}
+
+.weather-list {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.weather-title {
+  width: 200px;
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  position: absolute;
+  top: 62px;
+  left: calc(50% - 100px);
+}
+
+.weather_icon {
+  width: 35px;
+  height: 35px;
+  margin-bottom: 10px;
+  fill: rgba(255, 255, 255, 0.54);
+}
+
+.days_list_item_day {
+  text-align: center;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: #ffffff;
+  opacity: 0.55;
+  margin-bottom: 15px;
+}
+
+.days_list_item_date {
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #ffffff;
+}
+
+.date {
+  margin-right: 5px;
+}
+
+.temperature-on-card {
+  display: flex;
+  justify-content: center;
+}
+
+.min-temp {
+  padding-right: 5px;
+  margin-right: 5px;
+  border-right: 1px solid #27384a;
+}
+
+.temp-txt {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: #767d85;
+}
+
+.temp-number {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #ff6b09;
+}
+
+.more_info_btn {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  margin-top: 5px;
+  border: none;
+  background: transparent;
+  text-decoration-line: underline;
+  color: #ffffff;
+  opacity: 0.3;
+}
+
+@media (min-width: $tablet) {
+  .weather-main {
+    padding-top: 40px;
+  }
+
+  .days_list_item {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  .weather-list {
+    margin-right: -10px;
+    margin-left: -10px;
+  }
+
+  .weather-title {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 34px;
+    top: -40px;
+  }
+
+  .days_list_item {
+    width: 100px;
+    height: 190px;
+  }
+
+  .days_list_item_day {
+    font-size: 14px;
+    line-height: 17px;
+    margin-bottom: 10px;
+  }
+
+  .days_list_item_date {
+    font-size: 18px;
+    line-height: 22px;
+    margin-bottom: 10px;
+  }
+
+  .temp-number {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .temp-txt {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .min-temp {
+    padding-right: 10px;
+    margin-right: 10px;
+  }
+
+  .more_info_btn {
+    font-size: 14px;
+    line-height: 17px;
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: $desktop) {
+  .days_list_item {
+    width: 120px;
+    height: 228px;
+  }
+
+  .days_list_item_day {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .days_list_item_date {
+    font-size: 25px;
+    line-height: 30px;
+    margin-bottom: 20px;
+  }
+
+  .weather_icon {
+    margin-bottom: 30px;
+  }
+
+  .temp-number {
+    font-size: 25px;
+    line-height: 30px;
+  }
+
+  .temp-txt {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .min-temp {
+    padding-right: 15px;
+    margin-right: 15px;
+  }
+
+  .more_info_btn {
+    font-size: 14px;
+    line-height: 17px;
+    margin-top: 5px;
+  }
+}

@@ -1,0 +1,30 @@
+<div class="today-info">
+    <div class="today-list">
+        <h2 class="today-list__number">{{dayNumber}}th {{dayOfWeek}}</h2>
+
+        <ul class="today-list__item">
+            <li class="today-list__dayOfWeek">{{month}}</li>
+            <li class="today-list__time">{{time}}</li>
+
+        </ul>
+
+        <ul class="today-list__item">
+
+            <li class="today-list__sunrice">
+                <svg class="today-list__item__svg">
+                    <use href="./sprite.svg#icon-sunrise"></use>
+                </svg>
+                {{sunrise}}
+            </li>
+
+            <li class="today-list__sunset">
+                <svg class="today-list__item__svg">
+                    <use href="./sprite.svg#icon-sunset"></use>
+                </svg>
+                {{sunset}}
+            </li>
+        </ul>
+
+        </ul>
+    </div>
+</div>
