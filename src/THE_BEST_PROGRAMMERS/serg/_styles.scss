@@ -5,8 +5,10 @@
 // обратите внимание используется относительный путь в Вашу папку с Вашими изображениями
 // Тут не использовать спрайт!
 .weather-moreInfo {
-  position: absolute;
+  min-width: 800px;
+
   display: flex;
+  transform: translateX(-30px);
   justify-content: center;
   text-align: center;
 
@@ -32,6 +34,10 @@
     }
   }
 }
+.galery_item {
+  overflow: hidden;
+  max-width: 100%;
+}
 
 .galery {
   padding: 0px;
@@ -54,6 +60,7 @@
   border-radius: 25px;
 }
 .weather-main {
+  width: max-content;
   padding-left: 15px;
   background: rgba(16, 33, 54, 0.8);
   box-shadow: 0px 8px 43px rgba(16, 33, 54, 0.6);
@@ -87,6 +94,7 @@
   padding-bottom: 6px;
 }
 .galery_svg {
+  stroke: none;
   fill: rgba(255, 255, 255, 0.54);
 }
 .bar {
@@ -109,7 +117,6 @@
   margin: 0px;
 }
 .ewcw {
-  position: absolute;
   display: none;
   top: 8px;
   right: 8px;
@@ -128,10 +135,10 @@
     }
   }
   @media (min-width: $tablet) {
-    position: relative;
     display: block;
-    top: 245px;
-    left: 547px;
+    top: 518px;
+    left: 563px;
+    position: absolute;
     .container {
       max-width: $tablet;
       padding: 0 74px 0 74px;
