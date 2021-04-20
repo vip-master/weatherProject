@@ -1,5 +1,5 @@
 body{
-    // background-image: url("./THE_BEST_PROGRAMMERS/rlapsky/images/city.jpg");
+    background-image: url("../THE_BEST_PROGRAMMERS/rlapsky/images/city.jpg");
 }
 .today {
     text-align: center;
@@ -301,7 +301,7 @@ body{
 
     .today__temp {
         font-size: 90px;
-        line-height: 108px;
+        line-height: 97px;
     }
 
     .today-info {
@@ -317,7 +317,7 @@ body{
 
     .today-list__number {
         font-size: 90px;
-        line-height: 108px;
+        line-height: 97px;
         text-align: center;
     }
 
@@ -336,17 +336,20 @@ body{
 @media screen and (min-width: 1280px) {
 
     .today {
-        margin: 92px 0px 21px 720px;
+        width: 450px;
+        margin: 92px 0px 21px 0px;
+        margin-left: auto;
         border-radius: 34px 0px 0px 34px;
     }
 
     .today-info {
         width: 630px;
-        margin: 65px 0px 0px -120px;
+        margin: 65px 0px 0px 0px;
         padding: 60px 0px 90px 110px;
         border-radius: 0px 34px 0px 0px;
     }
     .weather-toggle {
+        margin-right: 110px;
         justify-content: flex-end;
     }
     .today-list__number{
