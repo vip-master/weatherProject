@@ -50,9 +50,16 @@ new Chart(document.getElementById("charts-line"), {
         ]
     },
     options: {
-     
-            // responsive: true,
-            // maintainAspectRatio: true,
+        //  layout: {
+        //     padding: {
+        //          left: 20,
+        //          reight: 20,
+        //          top: 20,
+        //         botton:20,
+        //     }
+        // },
+            responsive: true,
+            maintainAspectRatio: false,
             scales: {
                 y: {
                     // display: true,
@@ -85,6 +92,8 @@ new Chart(document.getElementById("charts-line"), {
                 legend:{
                     position: 'top',
                     align: 'center',
+                    display: 'flex',
+                    //прописати позицыю 
     
                     labels: {
                         color: 'rgba(255, 255, 255, 0.5)',
@@ -107,6 +116,18 @@ new Chart(document.getElementById("charts-line"), {
         }
         
     });
+const buttonChart = document.querySelector('.charts-open');
+buttonChart.innerHTML=`<div><p><button class="button-chart-close">Hide Chart <svg width="28"height="28"><use href="./sprite.svg#icon-arrow_to_up"></use></svg></button></p></div>
+`
+  
+         
+         
+//  function buttonChart() {
+//      document.querySelector('#charts-line').innerHTML=`   <div> <p><button>Hide Chart <svg>   <use href="./sprite.svg#icon-arrow_to_up"></use></svg></button></p></div>`
+         
+   
+      
+//  }
 
 
 export { rendChart };
