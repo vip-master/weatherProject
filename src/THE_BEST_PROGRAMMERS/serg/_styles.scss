@@ -6,11 +6,8 @@
 // Тут не использовать спрайт!
 .weather-moreInfo {
   min-width: 800px;
-
   display: flex;
-  transform: translateX(-30px);
   justify-content: center;
-  text-align: center;
 
   @media (min-width: $mobile) {
     .container {
@@ -18,15 +15,14 @@
     }
   }
   @media (min-width: $tablet) {
-    padding-bottom: 88px;
     .container {
       max-width: $tablet;
       padding: 0 74px 0 74px;
     }
   }
   @media (min-width: $desktop) {
-    padding-bottom: 40px;
     justify-content: center;
+    margin-right: -10px;
 
     .container {
       max-width: $desktop;
@@ -61,13 +57,10 @@
 }
 .weather-main {
   width: max-content;
-  padding-left: 15px;
   background: rgba(16, 33, 54, 0.8);
   box-shadow: 0px 8px 43px rgba(16, 33, 54, 0.6);
   border-radius: 34px;
   @media (min-width: $mobile) {
-    width: 280px;
-    height: 540px;
     .container {
       padding: 0 20px 0 20px;
     }
