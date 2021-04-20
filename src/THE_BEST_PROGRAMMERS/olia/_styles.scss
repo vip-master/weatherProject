@@ -11,6 +11,7 @@ body{
   }
   @media (min-width:$desktop) {
     padding-top: 79px; 
+    margin: 0 auto;
   }
 }
 .header{
@@ -20,6 +21,8 @@ body{
   }
   @media (min-width:$desktop) {
    margin: 0 auto;
+   width: 520px;
+   padding: 0;
   }
   
 }
@@ -95,6 +98,7 @@ margin-bottom: 5px;
 
 .header-slider{
   overflow: hidden;
+  position: relative;
 }
 
 .add-indent{
@@ -108,16 +112,15 @@ flex-wrap: wrap;
   
 margin-left: 20px;
 @media (min-width:$tablet) {
-margin-left: 80px;
 width: 400px;
 }
 @media (min-width:$desktop) {
-margin-left: 290px;
+
 }
 }
 
 .header-btn{
- 
+  position: relative;
   display: inline-block;
   margin-right: 10px;
   border: 1px solid transparent;
@@ -154,26 +157,27 @@ color: rgba(255, 255, 255, 1);
   
 }
 
-.header-slide{
-width: 28px;
-height: 28px;
-padding: 11px 12px;
-top: 93px;
-margin-left: 250px;
-border-radius: 50%;
-background-color: rgba(255, 255, 255, 0.2);
+// .header-slide{
+// position: absolute;
+// width: 28px;
+// height: 28px;
+// padding: 11px 12px;
+// top: 93px;
+// margin-left: 250px;
+// border-radius: 50%;
+// background-color: red;
 
-border: none;
-cursor: pointer;
-@media (min-width:$tablet) {
-  top: 120px;
-  margin-left: 450px;
-}
-@media (min-width:$desktop) {
-  top: 138px;
-  margin-left: 720px;
-}
-}
+// border: none;
+// cursor: pointer;
+// @media (min-width:$tablet) {
+//   top: 120px;
+//   margin-left: 450px;
+// }
+// @media (min-width:$desktop) {
+//   top: 138px;
+//   margin-left: 720px;
+// }
+// }
 .header-arrow{
 fill: none;
 stroke: rgba(0, 0, 0, 1);
@@ -183,6 +187,18 @@ width: 8px;
 height: 8px;
 top: 10px;
 left: 11px;
+}
+
+.header-slide{
+position: absolute;
+width: 28px;
+height: 28px;
+top: 0;
+right: 0;
+border-radius: 50%;
+background-color: rgba(255, 255, 255, 0.2);
+border: none;
+cursor: pointer;
 }
 
 
