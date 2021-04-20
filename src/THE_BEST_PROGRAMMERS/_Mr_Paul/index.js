@@ -11,9 +11,6 @@ import daysCard from './daysCard.hbs';
 
 const weatherList = document.querySelector('.weather-list')
 
-// document.body.insertAdjacentHTML("beforeend",
-// `<h2`)
-
 const weekDays = {
     'Sun': 'Sunday',
     'Mon': 'Monday',
@@ -24,12 +21,19 @@ const weekDays = {
     'Sat': 'Saturday',
 }
 
+
 function rendMain(data) {
     
     console.log('Mr_Paul');
+    console.log(data);
     const dayData = data.list[0];
     rendMore(dayData)
+
+    const weatherTitleCity = data.city.name + ', ' + data.city.country;
     
+    const weatherTitle = document.querySelector(".weather-title")
+    weatherTitle.innerHTML = weatherTitleCity;
+
     const dayOnCards = [];
     const dateOnCards = [];
     const monthOnCards = [];
@@ -53,7 +57,7 @@ function rendMain(data) {
         minTempOnCards.push(Math.round(Math.min( ...oneDayTempMin)));
         maxTempOnCards.push(Math.round(Math.max( ...oneDayTempMax)));
     }); 
-    
+    console.log(iconOnCard);
     class Card {
         constructor(day, date, month, icon, min, max) {
             this.day = day;
