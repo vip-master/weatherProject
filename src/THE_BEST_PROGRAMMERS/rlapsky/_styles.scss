@@ -1,13 +1,18 @@
 
 .today {
+    text-align: center;
     margin: 45px auto 31px auto;
     padding: 30px 56px;
     background: #102136;
     box-shadow: 0px 5px 33px rgba(16, 33, 54, 0.6);
     border-radius: 34px;
 }
+.today__svg{
+    width: 35px;
+    height: 35px;
+}
 .today__city {
-    padding-top: 40px;
+    padding-top: 10px;
     font-family: Lato;
     font-style: normal;
     font-weight: normal;
@@ -155,6 +160,12 @@
     line-height: 17px;
     letter-spacing: 0.04em;
 }
+
+.today-list__item__svg{
+    width: 20px;
+    height: 20px;
+}
+
 
 .today-list__number {
     margin: 0 auto;
