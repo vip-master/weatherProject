@@ -1,6 +1,7 @@
 import api from './apiService.js'
 import { render } from '../illia/index.js'
 const headerClose = document.querySelector('.header-close')
+const headerSlide = document.querySelector('.header-slide')
 const inputHeader = document.querySelector('.header-input')
 const cityList = document.querySelector('.header-list')
 const headerform = document.querySelector('.header-form')
@@ -117,4 +118,12 @@ function renderCityWeather(e) {
         inputHeader.value = e.target.innerText
         formSubmit()
     }
+}
+
+//_______________________________________________
+// слайдер для лист
+headerSlide.addEventListener('click', activeSlider)
+function activeSlider(){
+console.log('helo');
+cityList.style.height = 'unset'
 }
