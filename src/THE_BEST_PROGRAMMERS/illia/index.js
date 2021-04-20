@@ -31,6 +31,7 @@ const openToday = (data) => {
     document.querySelector(".firstpage-up").classList.remove("none")
     document.querySelector(".firstpage-down").classList.remove("none")
     document.querySelector(".weather-main").classList.add("compress")
+    document.querySelector(".weather-title").classList.add("none")
 
     rendFirst(JSON.parse(JSON.stringify(data)))
 }
@@ -38,6 +39,7 @@ const closeToday = () => {
     document.querySelector(".firstpage-up").classList.add("none")
     document.querySelector(".firstpage-down").classList.add("none")
     document.querySelector(".weather-main").classList.remove("compress")
+    document.querySelector(".weather-title").classList.remove("none")
 }
 const openFDays = (data) => {
     document.querySelector(".weather-list").classList.remove("none")
@@ -80,16 +82,16 @@ document.querySelector(".weather-toggle-btn1").addEventListener("click", () => {
     console.log("#", showToday, lastData);
     if (showToday || !lastData) return
     console.log("$", showToday, lastData);
-    toggle(lastData)
     showToday = !showToday
+    toggle(lastData)
 })
 
 document.querySelector(".weather-toggle-btn2").addEventListener("click", () => {
     console.log("##", showToday, lastData);
     if (!showToday || !lastData) return
     console.log("$", showToday, lastData);
-    toggle(lastData)
     showToday = !showToday
+    toggle(lastData)
 })
 
 export { render }
