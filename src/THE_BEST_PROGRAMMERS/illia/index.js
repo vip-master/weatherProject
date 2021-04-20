@@ -24,30 +24,72 @@ const magic = (arr) => {
 
 let showToday = true
 
+let lastData = null
+
 const openToday = (data) => {
+
+    document.querySelector(".firstpage-up").classList.remove("none")
+    document.querySelector(".firstpage-down").classList.remove("none")
+    document.querySelector(".weather-main").classList.add("compress")
 
     rendFirst(JSON.parse(JSON.stringify(data)))
 }
-const closeToday = () => {}
+const closeToday = () => {
+    document.querySelector(".firstpage-up").classList.add("none")
+    document.querySelector(".firstpage-down").classList.add("none")
+    document.querySelector(".weather-main").classList.remove("compress")
+}
 const openFDays = (data) => {
+    document.querySelector(".weather-list").classList.remove("none")
+    document.querySelector(".weather-moreInfo").classList.remove("none")
+    document.querySelector(".weather-list-slider").classList.remove("none")
+    document.querySelector(".weather-moreInfo-slider").classList.remove("none")
+
     rendMain(JSON.parse(JSON.stringify(data)))
     rendChart(JSON.parse(JSON.stringify(data.list)))
 }
-const closeFDays = () => {}
+const closeFDays = () => {
+
+    document.querySelector(".weather-list").classList.add("none")
+    document.querySelector(".weather-moreInfo").classList.add("none")
+    document.querySelector(".weather-list-slider").classList.add("none")
+    document.querySelector(".weather-moreInfo-slider").classList.add("none")
+}
 
 const toggle = (data) => {
 
-    openToday(data)
-    openFDays(data)
-
+    if (showToday) {
+        closeFDays()
+        openToday(data)
+    } else {
+        closeToday()
+        openFDays(data)
+    }
 }
 
 const render = function(allData) {
+    lastData = allData
     allData.list = magic(allData.list)
     console.log("render");
-
     toggle(allData)
 
 
 }
+
+document.querySelector(".weather-toggle-btn1").addEventListener("click", () => {
+    console.log("#", showToday, lastData);
+    if (showToday || !lastData) return
+    console.log("$", showToday, lastData);
+    toggle(lastData)
+    showToday = !showToday
+})
+
+document.querySelector(".weather-toggle-btn2").addEventListener("click", () => {
+    console.log("##", showToday, lastData);
+    if (!showToday || !lastData) return
+    console.log("$", showToday, lastData);
+    toggle(lastData)
+    showToday = !showToday
+})
+
 export { render }
