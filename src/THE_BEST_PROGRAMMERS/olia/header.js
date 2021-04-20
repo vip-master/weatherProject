@@ -33,10 +33,19 @@ const icons = {
 }
 
 //Поиск города по сабмиту
-function formSubmit() {
-    let targetCity = inputHeader.value
-    if (targetCity === '') {
-        targetCity = 'Kyiv'
+function formSubmit(cityPosition) {
+    let targetCity
+    if(cityPosition){
+        let latitude = cityPosition.coords.latitude;
+        let longitude = cityPosition.coords.longitude;
+        targetCity = {latitude, longitude}
+    }
+    else{
+        targetCity = inputHeader.value
+       if (targetCity === '') {
+           targetCity = 'Kyiv'
+       }
+
     }
     api.fetchWeather(targetCity)
         .then(data => {
@@ -124,6 +133,25 @@ function renderCityWeather(e) {
 // слайдер для лист
 headerSlide.addEventListener('click', activeSlider)
 function activeSlider(){
-console.log('helo');
 cityList.style.height = 'unset'
 }
+
+//__________________________________________________
+//локация
+
+
+const location = document.querySelector('.header-icon')
+location.addEventListener('click', getMyLocation)
+
+
+window.onload = getMyLocation;
+
+function getMyLocation() {
+    if (navigator.geolocation) { // если браузер поддерживает Geolocation
+        navigator.geolocation.getCurrentPosition(formSubmit);
+    } else {
+        alert("Определение местоположения не поддерживается");
+    }
+}
+
+
