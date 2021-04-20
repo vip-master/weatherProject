@@ -11,7 +11,13 @@
 import Chart from 'chart.js/auto';
 function rendChart(data) {
     console.log('vitalik')
+    console.log(data);
+    const Temperature = data[0,7]
+    console.log(Temperature);
 }
+// const Temperature = data.map(temp => temp[0]);
+// console.log(Temperature);
+Chart.defaults.font.size = 14;
 const arr = ['16.04','17.04','18.04','19.04','20.04']
 new Chart(document.getElementById("charts-line"), {
     type: 'line',
@@ -19,37 +25,156 @@ new Chart(document.getElementById("charts-line"), {
         labels: [...arr],
         datasets: [{
             
-            data: [86, 114, 106, 106, 107, 111, 133, 221, 783, 2478],
-            
+            data: [-5, -4.5, -4, -3.5, -3, 2.5, -2, -1.5, -1],
+            color: '#FFFFFF',
             label: "— Temperature, C° ",
             borderColor: "#FF6B09",
             fill: false
-        }, { 
-            data: [282,350,411,502,635,809,947,1402,3700,5267],
+        }, {
+            data: [-5, -4.5, -4, -3.5, -3, 2.5, -2, -1.5, -1],
             label: "— Humidity, % ",
             borderColor: "#0906EB",
             fill: false,
             
-        }, { 
-            data: [168,170,178,190,203,276,408,547,675,734],
+        }, {
+            data: [-5, -4.5, -4, -3.5, -3, 2.5, -2, -1.5, -1],
             label: "— Wind Speed, m/s ",
             borderColor: "#EA9A05",
             fill: false
-        }, { 
-            data: [40,20,10,16,24,38,74,167,508,784],
+        }, {
+            data: [-5, -4.5, -4, -3.5, -3, 2.5, -2, -1.5, -1],
             label: "— Atmosphere Pressure, m/m",
             borderColor: "#067806",
             fill: false
         }
-    ]
-},
-options: {
-    backgroundColor:"rgba(16, 33, 54, 0.8)",
-    title: {
-        display: true,
-        text: 'Hide Chart',
-        color:'#FF6B09'
-    }
-}
-});
-export {rendChart}
+        ]
+    },
+    options: {
+     
+            // responsive: true,
+            // maintainAspectRatio: true,
+            scales: {
+                y: {
+                    // display: true,
+                    // title: {
+                    //     display: true,
+                    //     text:'Value of Indicators',
+                    //     color: 'rgba(255, 255, 255, 0.5)',
+                    //     font:{
+                    //         family: 'Lato',
+                    //         size: 12,
+                    //         weight: 400,
+                    //     },
+                    //     padding:{bottom:10}
+                    // },
+                    stacked: true,
+                    beginAtZero: false,
+                    gridLines: {
+                        display: true,
+                        color: "rgba(255,99,132,0.2)",
+                    }
+                },
+                
+            x: {
+                gridLines: {
+                    display: false,
+                }
+            }
+            },
+            plugins:{
+                legend:{
+                    position: 'top',
+                    align: 'center',
+    
+                    labels: {
+                        color: 'rgba(255, 255, 255, 0.5)',
+                        boxWidth: 10,
+                        boxHeight:10,
+                        },
+                },
+                title:{
+                    display: true,
+                    text: 'AVERAGE:',
+                    color: 'rgba(255, 255, 255, 0.5)',
+                    align: 'start',
+                    font: {
+                        size: 12,
+                        family: "Lato",
+                        weight: 400,
+                        },
+                },
+            },
+        }
+        
+    });
+
+
+export { rendChart };
+const buttonChart = document.querySelector('.charts-open');
+buttonChart.innerHTML=`<div>
+    <p><button class="button-chart-close">Hide Chart<svg width="28px" height="28px">
+                <use href="./sprite.svg#icon-arrow_to_up"></use>
+            </svg></button></p>
+</div>`
+
+    // options: {
+     
+    //         // responsive: true,
+    //         // maintainAspectRatio: true,
+    //         scales: {
+    //             y: {
+    //                 // display: true,
+    //                 // title: {
+    //                 //     display: true,
+    //                 //     text:'Value of Indicators',
+    //                 //     color: 'rgba(255, 255, 255, 0.5)',
+    //                 //     font:{
+    //                 //         family: 'Lato',
+    //                 //         size: 12,
+    //                 //         weight: 400,
+    //                 //     },
+    //                 //     padding:{bottom:10}
+    //                 // },
+    //                 stacked: true,
+    //                 beginAtZero: false,
+    //                 gridLines: {
+    //                     display: true,
+    //                     color: "rgba(255,99,132,0.2)",
+    //                 }
+    //             },
+                
+    //         x: {
+    //             gridLines: {
+    //                 display: false,
+    //             }
+    //         }
+    //         },
+    //         plugins:{
+    //             legend:{
+    //                 position: 'top',
+    //                 align: 'center',
+    
+    //                 labels: {
+    //                     color: 'rgba(255, 255, 255, 0.5)',
+    //                     boxWidth: 10,
+    //                     boxHeight:10,
+    //                     },
+    //             },
+    //             title:{
+    //                 display: true,
+    //                 text: 'AVERAGE:',
+    //                 color: 'rgba(255, 255, 255, 0.5)',
+    //                 align: 'start',
+    //                 font: {
+    //                     size: 12,
+    //                     family: "Lato",
+    //                     weight: 400,
+    //                     },
+    //             },
+    //         },
+    //     }
+        
+    // });
+
+
+
