@@ -42,6 +42,7 @@ const closeToday = () => {
     document.querySelector(".weather-title").classList.remove("none")
 }
 const openFDays = (data) => {
+    document.querySelector(".charts").classList.remove("none")
     document.querySelector(".weather-list").classList.remove("none")
     document.querySelector(".weather-moreInfo").classList.remove("none")
     document.querySelector(".weather-list-slider").classList.remove("none")
@@ -52,6 +53,7 @@ const openFDays = (data) => {
 }
 const closeFDays = () => {
 
+    document.querySelector(".charts").classList.add("none")
     document.querySelector(".weather-list").classList.add("none")
     document.querySelector(".weather-moreInfo").classList.add("none")
     document.querySelector(".weather-list-slider").classList.add("none")
