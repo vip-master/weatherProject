@@ -1,5 +1,5 @@
 import api from './apiService.js'
-import { render } from '../serg/index.js'
+import { render } from '../illia/index.js'
 const headerClose = document.querySelector('.header-close')
 const headerSlide = document.querySelector('.header-slide')
 const inputHeader = document.querySelector('.header-input')
@@ -66,33 +66,33 @@ starIcon.addEventListener('click', saveCity)
 function saveCity() {
     let newCity = inputHeader.value
     api.fetchWeather(newCity)
-    .then(data=>{
-        if (data.cod === '404'){
-            inputHeader.value = ""
-            return
-        }
-      if (localStorage.getItem('city') === null) {
-        localStorage.setItem('city', '[]');
-    }
-    if (localStorage.getItem('city').includes(newCity)) {
-        return
-    }
-    let allCity = JSON.parse(localStorage.getItem('city'))
-    allCity.push(newCity);
-    localStorage.setItem('city', JSON.stringify(allCity))
-    createFavoritCity(newCity)
-    })
+        .then(data => {
+            if (data.cod === '404') {
+                inputHeader.value = ""
+                return
+            }
+            if (localStorage.getItem('city') === null) {
+                localStorage.setItem('city', '[]');
+            }
+            if (localStorage.getItem('city').includes(newCity)) {
+                return
+            }
+            let allCity = JSON.parse(localStorage.getItem('city'))
+            allCity.push(newCity);
+            localStorage.setItem('city', JSON.stringify(allCity))
+            createFavoritCity(newCity)
+        })
 }
 
 function createFavoritCity(newCity) {
-let liEl = `<li class="header-item">
+    let liEl = `<li class="header-item">
 <button class="header-btn"><span class="header-text">${newCity}</span>
 <svg class="header-close">
 <use href="sprite.svg#icon-cross"></use>
 </svg>
 </button>
 </li>`
-cityList.insertAdjacentHTML('beforeend', liEl)
+    cityList.insertAdjacentHTML('beforeend', liEl)
 }
 
 if (localStorage.getItem('city') !== null) {

@@ -5,6 +5,10 @@
 // обратите внимание используется относительный путь в Вашу папку с Вашими изображениями
 // Тут не использовать спрайт!
 
+.weather {
+  position: relative;
+}
+
 .days_list_item {
   list-style: none;
   text-align: center;
@@ -13,7 +17,7 @@
 }
 
 .weather-main {
-  padding-top: 40px;
+  padding-top: 75px;
 }
 
 .weather-list {
@@ -22,7 +26,16 @@
   justify-content: center;
 }
 
-.weather-list {
+.weather-title {
+  width: 200px;
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  position: absolute;
+  top: 62px;
+  left: calc(50% - 100px);
 }
 
 .weather_icon {
@@ -82,10 +95,117 @@
 }
 
 .more_info_btn {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
   margin-top: 5px;
   border: none;
   background: transparent;
   text-decoration-line: underline;
   color: #ffffff;
   opacity: 0.3;
+}
+
+@media (min-width: $tablet) {
+  .weather-main {
+    padding-top: 40px;
+  }
+
+  .days_list_item {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  .weather-list {
+    margin-right: -10px;
+    margin-left: -10px;
+  }
+
+  .weather-title {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 34px;
+    top: -40px;
+  }
+
+  .days_list_item {
+    width: 100px;
+    height: 190px;
+  }
+
+  .days_list_item_day {
+    font-size: 14px;
+    line-height: 17px;
+    margin-bottom: 10px;
+  }
+
+  .days_list_item_date {
+    font-size: 18px;
+    line-height: 22px;
+    margin-bottom: 10px;
+  }
+
+  .temp-number {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .temp-txt {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .min-temp {
+    padding-right: 10px;
+    margin-right: 10px;
+  }
+
+  .more_info_btn {
+    font-size: 14px;
+    line-height: 17px;
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: $desktop) {
+  .days_list_item {
+    width: 120px;
+    height: 228px;
+  }
+
+  .days_list_item_day {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .days_list_item_date {
+    font-size: 25px;
+    line-height: 30px;
+    margin-bottom: 20px;
+  }
+
+  .weather_icon {
+    margin-bottom: 30px;
+  }
+
+  .temp-number {
+    font-size: 25px;
+    line-height: 30px;
+  }
+
+  .temp-txt {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .min-temp {
+    padding-right: 15px;
+    margin-right: 15px;
+  }
+
+  .more_info_btn {
+    font-size: 14px;
+    line-height: 17px;
+    margin-top: 5px;
+  }
 }
