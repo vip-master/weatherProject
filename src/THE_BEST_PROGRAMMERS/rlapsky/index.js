@@ -7,8 +7,27 @@
 //     </svg>`)
 import tempFirst from './templates/firstpage-up.hbs'
 import tempBox from './templates/firstpage-box.hbs'
+
+const months = {
+    'Jun': 'January',
+    'Feb': 'February',
+    'Mar': 'March',
+    'Apr': 'April',
+    'May': 'May',
+    'Jun': 'June',
+    'Jul': 'July',
+    'Aug': 'August',
+    'Sep': 'September',
+    'Oct': 'October',
+    'Nov': 'November',
+    'Dec': 'December',
+};
+
+const tranformNumbers=(number)=>{
+    return (new Date(number*1000)).toLocaleTimeString()
+}
+
 function rendFirst(data){
-    console.log(data);
     const toDay = data.list[0]
     .map(el => {
     const newEl = {}
@@ -41,24 +60,24 @@ function rendFirst(data){
     };
         const toDate = new Date().toDateString().split(' ');
         const time  = new Date().toLocaleTimeString();
-        const month = toDate[1];
+        const month = months[toDate[1]];
         const dayNumber = toDate[2];
         const dayOfWeek = toDate[0];
-        const sunrise = data.city.sunrise;
-        const sunset = data.city.sunset;
+        const sunrise = tranformNumbers(data.city.sunrise);
+        const sunset = tranformNumbers(data.city.sunset);
         const down = {time,month,dayNumber,dayOfWeek,sunrise,sunset};
         if(document.querySelector(".firstpage-box").innerHTML){
             document.querySelector('.today-list__number').textContent=`${dayNumber} ${dayOfWeek}`
             document.querySelector('.today-list__dayOfWeek').textContent=`${month}`
             document.querySelector('.today-list__time').textContent=`${time}`
-            document.querySelector('.today-list__sunrice').textContent=`${sunrise}`
-            document.querySelector('.today-list__sunset').textContent=`${sunset}`
+            document.querySelector('.today-list__sunrice').innerHTML = 
+            `<svg class="today-list__item__svg"><use href="./sprite.svg#icon-sunrise"></use></svg> ${sunrise}`
+            document.querySelector('.today-list__sunset').innerHTML = 
+            `<svg class="today-list__item__svg"><use href="./sprite.svg#icon-sunrise"></use></svg> ${sunset}`
         }
         else {
             document.querySelector('.firstpage-box').innerHTML= tempBox(down);
         }
-        
-        console.log(toDate);
 
 }
  
