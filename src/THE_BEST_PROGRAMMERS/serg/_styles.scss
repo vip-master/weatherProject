@@ -5,9 +5,10 @@
 // обратите внимание используется относительный путь в Вашу папку с Вашими изображениями
 // Тут не использовать спрайт!
 .weather-moreInfo {
-  min-width: 1056px;
+  min-width: 919px;
   display: flex;
   justify-content: center;
+  margin-bottom: 49px;
 
   @media (min-width: $mobile) {
     .container {
@@ -16,17 +17,18 @@
   }
   @media (min-width: $tablet) {
     margin-bottom: 88px;
-    min-width: 1100px;
+    min-width: 919px;
+    margin-top: 40px;
     .container {
       max-width: $tablet;
       padding: 0 74px 0 74px;
     }
   }
   @media (min-width: $desktop) {
+    min-width: 1056px;
     margin-bottom: 0px;
     margin-top: 40px;
     justify-content: center;
-    margin-right: -10px;
 
     .container {
       max-width: $desktop;
@@ -44,12 +46,16 @@
   display: flex;
   justify-content: center;
 }
-
+.galery_item:not(:last-child) {
+  margin-right: 10px;
+}
+.border {
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
 .galery_item {
   padding-top: 15px;
   padding-bottom: 18px;
   text-align: center;
-  margin-right: 10px;
   list-style: none;
   width: 120px;
   left: 190px;
@@ -67,6 +73,7 @@
 }
 .weather-main {
   width: max-content;
+  overflow: hidden;
   background: rgba(16, 33, 54, 0.8);
   box-shadow: 0px 8px 43px rgba(16, 33, 54, 0.6);
   border-radius: 34px;
@@ -106,9 +113,17 @@
 }
 .galery_item_temperature {
   padding-top: 10px;
-  font-size: 25px;
-  line-height: 30px;
+  font-size: 18px;
+  line-height: 22px;
   color: $accent;
+  @media (min-width: $desktop) {
+    font-size: 25px;
+    line-height: 30px;
+    .container {
+      max-width: $desktop;
+      padding: 0 110px 0 110px;
+    }
+  }
 }
 .galery_item_barometer {
   margin: 0px;
@@ -124,16 +139,13 @@
   display: none;
   top: 8px;
   right: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 30px;
   height: 30px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(0, 0, 0, 0.1);
   @media (min-width: $mobile) {
-    display: none;
+    // display: none;
     .container {
       padding: 0 20px 0 20px;
     }
@@ -143,6 +155,7 @@
     top: 580px;
     left: 561px;
     position: absolute;
+
     .container {
       max-width: $tablet;
       padding: 0 74px 0 74px;
