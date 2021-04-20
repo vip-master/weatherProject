@@ -49,10 +49,10 @@ function rendFirst(data){
         const down = {time,month,dayNumber,dayOfWeek,sunrise,sunset};
         if(document.querySelector(".firstpage-box").innerHTML){
             document.querySelector('.today-list__number').textContent=`${dayNumber} ${dayOfWeek}`
-            document.querySelector('./today-list__dayOfWeek').textContent=`${month}`
-            document.querySelector('./today-list__time').textContent=`${time}`
-            document.querySelector('./today-list__sunrice').textContent=`${sunrise}`
-            document.querySelector('./today-list__sunset').textContent=`${sunset}`
+            document.querySelector('.today-list__dayOfWeek').textContent=`${month}`
+            document.querySelector('.today-list__time').textContent=`${time}`
+            document.querySelector('.today-list__sunrice').textContent=`${sunrise}`
+            document.querySelector('.today-list__sunset').textContent=`${sunset}`
         }
         else {
             document.querySelector('.firstpage-box').innerHTML= tempBox(down);
