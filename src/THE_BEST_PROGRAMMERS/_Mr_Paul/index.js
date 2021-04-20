@@ -9,6 +9,7 @@ import { rendMore } from '../serg/lib.js'
 
 import daysCard from './daysCard.hbs';
 
+const fiveDaysSection = document.querySelector('.fivedays');
 const weatherList = document.querySelector('.weather-list');
 const weatherTitle = document.querySelector(".weather-title");
 const weatherListSlider = document.querySelector(".weather-list-slider");
@@ -41,9 +42,12 @@ function rendMain(data) {
     hideMoreInfoSlider.innerHTML = '';
     console.log('Mr_Paul');
     console.log(data);
-
+    console.log(weatherList.classList.item);
     function showMoreInfo(e) {
         
+        fiveDaysSection.classList.remove("position");
+        fiveDaysSection.classList.add("position-v2")
+
         if(e.target.textContent !== 'more info') {
             return
         }

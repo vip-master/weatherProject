@@ -5,6 +5,19 @@
 // обратите внимание используется относительный путь в Вашу папку с Вашими изображениями
 // Тут не использовать спрайт!
 
+.position {
+  position: absolute;
+  top: 50vh;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.position-v2 {
+  position: absolute;
+  top: 25vh;
+  left: 50%;
+  transform: translateX(-50%);
+}
 .weather {
   position: relative;
 }
@@ -20,12 +33,15 @@
   width: 100%;
   padding-top: 75px;
   margin-top: 30px;
+  width: 280px;
+  overflow: hidden;
 }
 
 .weather-list {
   min-width: 410px;
   display: flex;
   justify-content: center;
+  margin-left: 20px;
 }
 
 .weather-title {
@@ -124,6 +140,11 @@
 @media (min-width: $tablet) {
   .weather-main {
     padding-top: 40px;
+    width: 620px;
+  }
+
+  .weather-list {
+    margin-left: 0px;
   }
 
   .days_list_item {
@@ -183,6 +204,7 @@
 
 @media (min-width: $desktop) {
   .weather-main {
+    width: 1060px;
     padding-bottom: 40px;
   }
 
