@@ -5,34 +5,53 @@
 // обратите внимание используется относительный путь в Вашу папку с Вашими изображениями
 // Тут не использовать спрайт!
 .charts {
+    //     width: 1060px;
+    // height: 540px;
     margin-top: 15px;
+    //     padding-top: 88px;
+    // padding-left: 80px;
+    // padding-bottom: 40px;
+    // padding-right: 180px;
 // margin-bottom: 101px;
     background-color: rgba(16, 33, 54, 0.8);
     box-shadow: 0px 8px 43px rgb(16 33 54 / 60%);
     border-radius: 34px;
 //     @media screen and (min-width:1200px) {
-//     width: 1060px;
+//         .charts{
+//              width: 1060px;
 //     height: 540px;
+//     padding-top: 88px;
+//     padding-left: 80px;
+//     padding-bottom: 40px;
+//     padding-right: 180px;   
+//         }
+
 //   } 
 //     @media screen and (min-width:768px) {
 //     width: 620px;
 //     height: 462px;
+//         padding-top: 88px;
+//     padding-left: 33px;
+//     padding-bottom: 41px;
+//     padding-right: 33px;
 //   }
-//      @media screen and(min-width:280px) {
+//     @media screen and(min-width:280px) {
+        
 //     width: 280px;
 //     height: 516px;
+//           padding-top: 26px;
+//     padding-left: 11px;
+//     padding-bottom: 30px;
+//     // padding-right: 33px;
 //   }
-padding:88 80 180 40 ;
-padding-top: 88px;
-padding-left: 80px;
-padding-bottom: 40px;
-padding-right: 180px;
+
 }
+
 .button-chart-close {
  border: none;
     background-color: transparent;
     color: #FF6B09;
-        display: flex;
+    display: flex;
     align-items: center;
     // opacity: 1;
 position:absolute;
@@ -43,22 +62,28 @@ top: -68px;
     position: relative;
 }
 .chart-svg{
+width: 8px;
+height: 16px;
+fill: none;
+stroke: #ffffff;
+top: 8px;
+right: 8px;
+    
+}
+.chart-svg-box{
+margin-left: 10px;
+display: flex;
+align-items: center;
+justify-content: center;
+width: 28px;
+height: 28px;
+border-radius: 50%;
+background: rgba(255, 255, 255, 0.2);
 
-    margin-left: 10px;
-        fill: none;
-    stroke: #ffffff;
-    display: none;
-    top: 8px;
-    right: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-   background: rgba(255, 255, 255, 0.2);
-
-    border: 1px solid rgba(0, 0, 0, 0.1);
+border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.button-chart-text{
+text-decoration: underline;
 }
     // position: absolute;
     // display: none;
@@ -72,3 +97,36 @@ top: -68px;
     // border-radius: 50%;
     // background: rgba(255, 255, 255, 0.2);
     // border: 1px solid rgba(0, 0, 0, 0.1);
+    @media screen and(min-width:$start) {
+        .charts{
+            width: 280px;
+            height: 516px;
+            padding-top: 26px;
+            padding-left: 11px;
+            padding-bottom: 30px; 
+        }    
+        
+        // padding-right: 33px;
+    }
+    @media screen and (min-width:$tablet) {
+        .charts{
+            width: 620px;
+            height: 462px;
+            padding-top: 88px;
+            padding-left: 33px;
+            padding-bottom: 41px;
+            padding-right: 33px;    
+        }   
+        
+    }
+    @media screen and (min-width:$desktop) {
+      .charts{
+  width: 1060px;
+  height: 540px;
+  padding-top: 88px;
+  padding-left: 80px;
+  padding-bottom: 40px;
+  padding-right: 180px;   
+      }
+
+} 
