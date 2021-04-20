@@ -10,7 +10,7 @@ const rendMore = function(dayData) {
         e.dt_txt = rer
         e.main.pressure = wew
         e.main.temp = lolo
-        e.icon= icon
+        e.icon = icon
         return e
         
     })
