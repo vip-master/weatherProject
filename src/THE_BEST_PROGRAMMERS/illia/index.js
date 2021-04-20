@@ -49,6 +49,7 @@ const openFDays = (data) => {
     document.querySelector(".weather-moreInfo").classList.remove("none")
     document.querySelector(".weather-list-slider").classList.remove("none")
     document.querySelector(".weather-moreInfo-slider").classList.remove("none")
+    document.querySelector(".fivedays").classList.add("position")
 
     rendMain(JSON.parse(JSON.stringify(data)))
     rendChart(JSON.parse(JSON.stringify(data.list)))
@@ -60,6 +61,7 @@ const closeFDays = () => {
     document.querySelector(".weather-moreInfo").classList.add("none")
     document.querySelector(".weather-list-slider").classList.add("none")
     document.querySelector(".weather-moreInfo-slider").classList.add("none")
+    document.querySelector(".fivedays").classList.remove("position")
 }
 
 const toggle = (data) => {
