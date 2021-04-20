@@ -12,7 +12,7 @@ import Chart from 'chart.js/auto';
 function rendChart(data) {
     console.log('vitalik')
     console.log(data);
-   
+
     const grafikTemperature = data.map(temperature => {
         return temperature[0]
     })
@@ -45,14 +45,38 @@ function rendChart(data) {
     // const Temperature = data[0,7]
     // console.log(Temperature);
     
-    
+ document.querySelector('.charts').insertAdjacentHTML('beforebegin', `<div class="chart-position">
+   <button class="button-chart-show"><span class="button-chart-text">Show Chart</span><div class="chart-svg-box">
+   <svg class="chart-svg" >
+                <use href="./sprite.svg#icon-arrow_to_down"></use>
+            </svg>
+            </div></button>
+</div>`);
+           document.querySelector('.charts').classList.add('none')
+      const onButtomChartClickShow = document.querySelector('.button-chart-show');
+    onButtomChartClickShow.addEventListener('click', buttonChartShow)
+    console.log(onButtomChartClick);
+    function buttonChartShow() {
+        document.querySelector('.charts').classList.remove('none')
+            document.querySelector('.button-chart-show').classList.add('none')
+    }
     
     const buttonChart = document.querySelector('.charts-open');
     buttonChart.innerHTML = `<div class="chart-position">
-   <button class="button-chart-close">Hide Chart<svg class="chart-svg" width="28px" height="28px">
-                <use href="./sprite.svg#icon-arrow_to_up" width="15px" height="15px"></use>
-            </svg></button>
+   <button class="button-chart-close"><span class="button-chart-text">Hide Chart</span><div class="chart-svg-box">
+   <svg class="chart-svg" >
+                <use href="./sprite.svg#icon-arrow_to_up"></use>
+            </svg>
+            </div></button>
 </div>`;
+     const onButtomChartClick = document.querySelector('.button-chart-close');
+    onButtomChartClick.addEventListener('click', buttonChartRemove)
+    console.log(onButtomChartClick);
+    function buttonChartRemove() {
+        document.querySelector('.charts').classList.add('none')
+            document.querySelector('.button-chart-show').classList.remove('none')
+    }
+
     Chart.defaults.font.size = 14;
 // const arr = ['22.04','23.04','24.04','25.04','26.04']
 new Chart(document.getElementById("charts-line"), {
