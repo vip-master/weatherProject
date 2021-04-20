@@ -3,6 +3,7 @@ body{
   background-color: rgb(213, 243, 243);
 }
 .header-form{
+  width: 100%;
   padding-top: 30px;
   position: relative;
   @media (min-width:$tablet) {
@@ -12,9 +13,19 @@ body{
     padding-top: 79px; 
   }
 }
+.header{
+  text-align: center;
+  @media (min-width:$tablet) {
+    padding: 0px 60px 0px 60px;
+  }
+  @media (min-width:$desktop) {
+   margin: 0 auto;
+  }
+  
+}
 
 .header-input{
-width: 280px;
+width: 100%;
 height: 48px;
 padding: 13px 20px 13px 57px;
 margin-bottom: 15px;
@@ -28,17 +39,11 @@ text-align: start;
 letter-spacing: 0.04em;
 color: #000000;
 @media (min-width:$tablet) {
- margin-left: 60px;
- margin-right: 60px;
-width: 500px;
 margin-bottom: 12px;
 font-size: 18px;
 line-height: 1.22;
 }
 @media (min-width:$desktop) {
-  margin-left: 270px;
-  margin-right: 270px;
-  width: 520px;
 margin-bottom: 12px;
 }
 
@@ -53,11 +58,11 @@ margin-bottom: 12px;
   left: 20px;
   @media (min-width:$tablet) {
     top: 73px;
-    left: 80px;
+   
   }
   @media (min-width:$desktop) {
     top: 92px;
-    left: 290px;
+
   }
 }
 .header-icon-star{
@@ -67,15 +72,15 @@ margin-bottom: 12px;
   height: 22px;
   position: absolute;
   top: 43px;
-  left: 239px;
+  right: 20px;
   cursor: pointer;
   @media (min-width:$tablet) {
     top: 73px;
-    left: 520px;
+    
   }
   @media (min-width:$desktop) {
     top: 92px;
-    left: 750px;
+   
   }
   
 }
@@ -88,10 +93,16 @@ list-style: none;
 margin-bottom: 5px;
 }
 
-.header-list{
-width: 250px;
-overflow: hidden;
+.header-slider{
+  overflow: hidden;
+}
+
+.add-indent{
 height: 28px;
+}
+.header-list{
+align-content:space-around;
+width: 200px;
 display: flex;
 flex-wrap: wrap;
   
@@ -110,7 +121,6 @@ margin-left: 290px;
   display: inline-block;
   margin-right: 10px;
   border: 1px solid transparent;
-  position: relative;
   border-radius: 20px;
   min-width: 74px;
   height: 28px;
@@ -145,7 +155,6 @@ color: rgba(255, 255, 255, 1);
 }
 
 .header-slide{
-position: absolute;
 width: 28px;
 height: 28px;
 padding: 11px 12px;
@@ -153,6 +162,7 @@ top: 93px;
 margin-left: 250px;
 border-radius: 50%;
 background-color: rgba(255, 255, 255, 0.2);
+
 border: none;
 cursor: pointer;
 @media (min-width:$tablet) {
@@ -171,9 +181,8 @@ display: block;
 margin: 0 auto;
 width: 8px;
 height: 8px;
-position: absolute;
-top: 11px;
-left: 12px;
+top: 10px;
+left: 11px;
 }
 
 
