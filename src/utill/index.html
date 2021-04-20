@@ -1,67 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <div class="header">
-            <form class="header-form">
-                <input class="header-input" type="text" name="query" autocomplete="off" placeholder="Enter the city" />
-                <svg class="header-icon">
-                    <use href="./sprite.svg#icon-location"></use>
-                </svg>
-                <svg class="header-icon-star">
-                    <use href="./sprite.svg#icon-Star"></use>
-                </svg>
-            </form>
-            <div class="header-slider">
-                <ul class="header-list"></ul>
-                <button class="header-slide">
-                    <svg class="header-arrow">
-                        <use href="./sprite.svg#icon-arrow_to_right"></use>
-                    </svg>
-                </button>
-            </div>
-
+      <div class="header">
+        <form class="header-form">
+          <input
+            class="header-input"
+            type="text"
+            name="query"
+            autocomplete="off"
+            placeholder="Enter the city"
+          />
+          <svg class="header-icon">
+            <use href="./sprite.svg#icon-location"></use>
+          </svg>
+          <svg class="header-icon-star">
+            <use href="./sprite.svg#icon-Star"></use>
+          </svg>
+        </form>
+        <div class="header-slider">
+          <ul class="header-list"></ul>
+          <button class="header-slide">
+            <svg class="header-arrow">
+              <use href="./sprite.svg#icon-arrow_to_right"></use>
+            </svg>
+          </button>
         </div>
+      </div>
 
-        <div class="firstpage-up"></div>
+      <div class="firstpage-up"></div>
 
-        <div class="weather">
-            <div class="weather-toggle">
-                <div class="weather-toggle-btn1">TODAY</div>
-                <div class="weather-toggle-btn2">5 DAYS</div>
-            </div>
-            <h2 class="weather-title"></h2>
-            <div class="weather-main">
-                <ul class="weather-list"></ul>
-                <div class="weather-list-slider"></div>
-                <ul class="weather-moreInfo"></ul>
-                <div class="weather-moreInfo-slider"></div>
-            </div>
+      <div class="weather">
+        <h2 class="weather-title"></h2>
+        <div class="weather-toggle">
+          <div class="weather-toggle-btn1">TODAY</div>
+          <div class="weather-toggle-btn2">5 DAYS</div>
         </div>
-
-        <div class="firstpage-down">
-            <div class="firstpage-box"></div>
-            <div class="firstpage-quotes">
-                <p class="firstpage-quotes-text"></p>
-                <h3 class="firstpage-quotes-title"></h3>
-            </div>
+        <div class="weather-main">
+          <ul class="weather-list"></ul>
+          <div class="weather-list-slider"></div>
+          <ul class="weather-moreInfo"></ul>
+          <div class="weather-moreInfo-slider"></div>
         </div>
+      </div>
 
-        <div class="charts">
-            <div class="charts-open"></div>
-            <div class="chats-canvas"><canvas id="charts-line"></canvas></div>
+      <div class="firstpage-down">
+        <div class="firstpage-box"></div>
+        <div class="firstpage-quotes">
+          <p class="firstpage-quotes-text"></p>
+          <h3 class="firstpage-quotes-title"></h3>
         </div>
+      </div>
+
+      <div class="charts">
+        <div class="charts-open"></div>
+        <div class="chats-canvas"><canvas id="charts-line"></canvas></div>
+      </div>
     </div>
-</body>
-
+  </body>
 </html>
