@@ -169,6 +169,16 @@
 
 @media (min-width: $desktop) {
   .days_list_item {
+    margin-right: 30px;
+    margin-left: 30px;
+  }
+
+  .weather-list {
+    margin-right: -30px;
+    margin-left: -30px;
+  }
+
+  .days_list_item {
     width: 120px;
     height: 228px;
   }
