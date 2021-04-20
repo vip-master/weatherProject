@@ -30,7 +30,7 @@ function rendFirst(data){
     const icon = data.list[0][0].weather[0].icon
     const up = {name,country,tempNow,tempMin,tempMax,icon};
     if (document.querySelector(".firstpage-up").innerHTML){
-        document.querySelector('.today__svg use').href=`./sprite.svg#${icon}`
+        document.querySelector('.today__svg use').setAttribute("href",`./sprite.svg#${icon}`)
         document.querySelector('.today__city').textContent=`${up.name}, ${up.country}`
         document.querySelector('.today__temp').textContent=`${tempNow}`
         document.querySelector('.today__min__temp').textContent=`${tempMin}`

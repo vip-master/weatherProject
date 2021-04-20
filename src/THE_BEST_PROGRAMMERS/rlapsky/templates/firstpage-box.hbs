@@ -9,9 +9,20 @@
         </ul>
 
         <ul class="today-list__item">
-            <li class="today-list__sunrice">{{sunrise}}</li>
 
-            <li class="today-list__sunset">{{sunset}}</li>
+            <li class="today-list__sunrice">
+                <svg class="today-list__item__svg">
+                    <use href="./sprite.svg#icon-sunrise"></use>
+                </svg>
+                {{sunrise}}
+            </li>
+
+            <li class="today-list__sunset">
+                <svg class="today-list__item__svg">
+                    <use href="./sprite.svg#icon-sunset"></use>
+                </svg>
+                {{sunset}}
+            </li>
         </ul>
 
         </ul>
