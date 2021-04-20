@@ -5,6 +5,8 @@ const headerSlide = document.querySelector('.header-slide')
 const inputHeader = document.querySelector('.header-input')
 const cityList = document.querySelector('.header-list')
 const headerform = document.querySelector('.header-form')
+const divHeader = document.querySelector('.header-slider')
+
 formSubmit()
 headerform.addEventListener('submit', e => {
     e.preventDefault();
@@ -131,9 +133,13 @@ function renderCityWeather(e) {
 
 //_______________________________________________
 // слайдер для лист
+
+
 headerSlide.addEventListener('click', activeSlider)
+divHeader.classList.add('add-indent')
+
 function activeSlider(){
-cityList.style.height = 'unset'
+if(cityList.children.length) divHeader.classList.remove('add-indent')
 }
 
 //__________________________________________________
