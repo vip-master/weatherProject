@@ -10,9 +10,10 @@ import { rendMore } from '../serg/lib.js'
 import daysCard from './daysCard.hbs';
 
 const weatherList = document.querySelector('.weather-list');
-const sectionMoreInfo = document.querySelector('.weather-moreInfo');
 const weatherTitle = document.querySelector(".weather-title");
-
+const weatherListSlider = document.querySelector(".weather-list-slider");
+const hideMoreInfo = document.querySelector(".weather-moreInfo");
+const hideMoreInfoSlider = document.querySelector(".weather-moreInfo-slider");
 const weekDays = {
     'Sun': 'Sunday',
     'Mon': 'Monday',
@@ -23,10 +24,21 @@ const weekDays = {
     'Sat': 'Saturday',
 };
 
-// sectionMoreInfo.style.display = "none";
+weatherListSlider.insertAdjacentHTML('beforeend', 
+    `<button class="fiveDaysScrollLeft">
+        <svg class="five-days-arrow">
+            <use href="./sprite.svg#icon-arrow_to_left"></use>
+        </svg>
+    </button>
+    <button class="fiveDaysScrollRight">
+        <svg class="five-days-arrow">
+            <use href="./sprite.svg#icon-arrow_to_right"></use>
+        </svg>
+    </button>`);
 
 function rendMain(data) {
-    
+    hideMoreInfo.innerHTML = '';
+    hideMoreInfoSlider.innerHTML = '';
     console.log('Mr_Paul');
     console.log(data);
 
@@ -35,7 +47,6 @@ function rendMain(data) {
         if(e.target.textContent !== 'more info') {
             return
         }
-        // sectionMoreInfo.style.display = "block";
         const dayData = data.list[e.target.dataset.id];
         
         rendMore(JSON.parse(JSON.stringify(dayData)));
@@ -43,9 +54,6 @@ function rendMain(data) {
     }
 
     weatherList.addEventListener('click', showMoreInfo);
-
-    // const dayData = data.list[0];
-    // rendMore(dayData)
 
     const weatherTitleCity = data.city.name + ', ' + data.city.country;
     
