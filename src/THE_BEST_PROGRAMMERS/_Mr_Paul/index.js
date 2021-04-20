@@ -9,7 +9,9 @@ import { rendMore } from '../serg/lib.js'
 
 import daysCard from './daysCard.hbs';
 
-const weatherList = document.querySelector('.weather-list')
+const weatherList = document.querySelector('.weather-list');
+const sectionMoreInfo = document.querySelector('.weather-moreInfo');
+const weatherTitle = document.querySelector(".weather-title");
 
 const weekDays = {
     'Sun': 'Sunday',
@@ -19,19 +21,31 @@ const weekDays = {
     'Thu': 'Thursday',
     'Fri': 'Friday',
     'Sat': 'Saturday',
-}
+};
 
+sectionMoreInfo.style.display = "none";
 
 function rendMain(data) {
     
     console.log('Mr_Paul');
-    console.log(data);
-    const dayData = data.list[0];
-    rendMore(dayData)
+    // console.log(data);
+
+    function showMoreInfo(e) {
+        if(e.target.textContent !== 'more info') {
+            return
+        }
+        sectionMoreInfo.style.display = "block";
+        const dayData = data.list[e.target.dataset.id];
+        rendMore(dayData);
+    }
+
+    weatherList.addEventListener('click', showMoreInfo);
+
+    // const dayData = data.list[0];
+    // rendMore(dayData)
 
     const weatherTitleCity = data.city.name + ', ' + data.city.country;
     
-    const weatherTitle = document.querySelector(".weather-title")
     weatherTitle.innerHTML = weatherTitleCity;
 
     const dayOnCards = [];
@@ -57,21 +71,23 @@ function rendMain(data) {
         minTempOnCards.push(Math.round(Math.min( ...oneDayTempMin)));
         maxTempOnCards.push(Math.round(Math.max( ...oneDayTempMax)));
     }); 
-    console.log(iconOnCard);
+
     class Card {
-        constructor(day, date, month, icon, min, max) {
+        constructor(day, date, month, icon, min, max, id) {
             this.day = day;
             this.date = date;
             this.month = month;
             this.icon = icon;
             this.min = min;
             this.max = max;
+            this.id = id;
 
         };
     }
+    let id = 0;
     const daysArray = [];
     for(let i = 0; i < dayOnCards.length; i +=1) {
-        const oneDay = new Card(weekDays[dayOnCards[i]], dateOnCards[i], monthOnCards[i], iconOnCard[i], minTempOnCards[i], maxTempOnCards[i]);
+        const oneDay = new Card(weekDays[dayOnCards[i]], dateOnCards[i], monthOnCards[i], iconOnCard[i], minTempOnCards[i], maxTempOnCards[i], id = i);
         daysArray.push(oneDay);
     }
 
