@@ -5,7 +5,7 @@
 // обратите внимание используется относительный путь в Вашу папку с Вашими изображениями
 // Тут не использовать спрайт!
 .weather-moreInfo {
-  min-width: 800px;
+  min-width: 1056px;
   display: flex;
   justify-content: center;
 
@@ -15,12 +15,16 @@
     }
   }
   @media (min-width: $tablet) {
+    margin-bottom: 88px;
+    min-width: 1100px;
     .container {
       max-width: $tablet;
       padding: 0 74px 0 74px;
     }
   }
   @media (min-width: $desktop) {
+    margin-bottom: 0px;
+    margin-top: 40px;
     justify-content: center;
     margin-right: -10px;
 
@@ -54,6 +58,12 @@
   color: rgba(255, 255, 255, 0.54);
   box-sizing: border-box;
   border-radius: 25px;
+  @media (min-width: $tablet) {
+    .container {
+      max-width: $tablet;
+      padding: 0 74px 0 74px;
+    }
+  }
 }
 .weather-main {
   width: max-content;
@@ -66,6 +76,7 @@
     }
   }
   @media (min-width: $tablet) {
+    overflow: hidden;
     width: 620px;
     .container {
       max-width: $tablet;
@@ -129,8 +140,8 @@
   }
   @media (min-width: $tablet) {
     display: block;
-    top: 518px;
-    left: 563px;
+    top: 580px;
+    left: 561px;
     position: absolute;
     .container {
       max-width: $tablet;

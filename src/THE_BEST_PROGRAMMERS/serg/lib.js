@@ -1,9 +1,9 @@
 import galeru from './galery.hbs';
 const rendMore = function(dayData) {
     const more = document.querySelector('.weather-moreInfo')
-    const pepo = dayData.splice(7)
+    const pepo = dayData.splice(8)
     const ret = dayData.map(e => {
-        const rer = e.dt_txt.slice(11, 16);
+        const rer = e.dt.slice(16, 21)
         const wew = Math.round(e.main.pressure * 0.007500637554192211 * 100)
         const lolo = Math.round(e.main.temp)
         const icon = e.weather[0].icon
