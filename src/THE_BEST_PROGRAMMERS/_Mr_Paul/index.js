@@ -23,20 +23,23 @@ const weekDays = {
     'Sat': 'Saturday',
 };
 
-sectionMoreInfo.style.display = "none";
+// sectionMoreInfo.style.display = "none";
 
 function rendMain(data) {
     
     console.log('Mr_Paul');
-    // console.log(data);
+    console.log(data);
 
     function showMoreInfo(e) {
+        
         if(e.target.textContent !== 'more info') {
             return
         }
-        sectionMoreInfo.style.display = "block";
+        // sectionMoreInfo.style.display = "block";
         const dayData = data.list[e.target.dataset.id];
-        rendMore(dayData);
+        
+        rendMore(JSON.parse(JSON.stringify(dayData)));
+
     }
 
     weatherList.addEventListener('click', showMoreInfo);
