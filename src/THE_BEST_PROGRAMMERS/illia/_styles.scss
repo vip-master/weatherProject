@@ -1,13 +1,13 @@
 .none {
-    display: none;
+    display: none !important;
 }
 
 .compress {
-    border: none;
-    background-color: transparent;
-    max-width: 0px;
-    max-height: 0px;
-    padding: 0;
-    margin: 0;
-    box-shadow: none;
+    border: none !important;
+    background-color: transparent !important;
+    max-width: 0px !important;
+    max-height: 0px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
 }
