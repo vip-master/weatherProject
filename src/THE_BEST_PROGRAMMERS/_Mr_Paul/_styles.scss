@@ -130,12 +130,12 @@
   color: #ffffff;
   opacity: 0.3;
 }
-@media (min-width: $mobile) {
-  .weather-main {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
+// @media (min-width: $mobile) {
+//   .weather-main {
+//     padding-left: 0;
+//     padding-right: 0;
+//   }
+// }
 
 @media (min-width: $tablet) {
   .fivedays {

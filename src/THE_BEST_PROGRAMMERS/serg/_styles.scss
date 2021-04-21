@@ -19,6 +19,7 @@
 .weather-moreInfo {
   display: flex;
   margin-bottom: 49px;
+  overflow: hidden;
 
   @media (max-width: 479px) {
     justify-content: start;
@@ -28,6 +29,7 @@
   }
   @media (min-width: $tablet) {
     margin-top: 40px;
+    margin-bottom: 30px;
     .container {
       max-width: $tablet;
       padding: 0 74px 0 74px;
