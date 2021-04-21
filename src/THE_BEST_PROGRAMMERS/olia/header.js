@@ -53,7 +53,10 @@ function formSubmit(cityPosition) {
         .then(data => {
             if (data.cod !== '200') {
                 inputHeader.value = ""
-                return
+                return 
+            }
+            if (cityPosition){
+                inputHeader.value = data.city.name
             }
             const allData = { list: data.list, city: data.city }
             allData.list.forEach(el => {
