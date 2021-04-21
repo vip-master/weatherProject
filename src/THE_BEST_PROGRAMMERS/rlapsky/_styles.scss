@@ -113,7 +113,7 @@ body{
     align-items: center;
     text-align: center;
     text-transform: uppercase;
-    padding: 6px 36px;
+    padding: 6px 40px;
     border: none;
 }
 
@@ -131,7 +131,7 @@ body{
     align-items: center;
     text-align: center;
     text-transform: uppercase;
-    padding: 6px 36px;
+    padding: 6px 40px;
     border: none;
 }
 
@@ -262,7 +262,7 @@ body{
 
     .today__city {
         font-size: 18px;
-        line-height: 22px;
+        line-height: 14px;
     }
 
     .today__min__max {
@@ -317,7 +317,7 @@ body{
 
     .today-list__number {
         font-size: 90px;
-        line-height: 97px;
+        line-height: 99px;
         text-align: center;
     }
 
@@ -337,7 +337,7 @@ body{
 
     .today {
         width: 450px;
-        margin: 92px 0px 21px 0px;
+        margin: 92px 0px 20px 0px;
         margin-left: auto;
         border-radius: 34px 0px 0px 34px;
     }
@@ -377,7 +377,10 @@ body{
     }
     .quotes {
         position: absolute;
-        right: 110px;
-        top: 702px;
+        right: 90px;
+        top: 704px;
+    }
+    .quotes__autor{
+        margin-top: 30px;
     }
 }
