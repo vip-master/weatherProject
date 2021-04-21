@@ -12,7 +12,7 @@ import Chart from 'chart.js/auto';
 function rendChart(data) {
     console.log('vitalik')
     console.log(data);
-
+    
     const grafikTemperature = data.map(temperature => {
         return temperature[0]
     })
@@ -36,139 +36,125 @@ function rendChart(data) {
         daily.push(dataGrafik[2]);
         year.push(dataGrafik[3])
     });
-  for (let i = 0; i < 5; i++) {
-   y.push(month[i]+' '+daily[i]+', '+year[i])
+    for (let i = 0; i < 5; i++) {
+        y.push(month[i] + ' ' + daily[i] + ', ' + year[i])
       
-  }
-    console.log(y);
-  
-    // const Temperature = data[0,7]
-    // console.log(Temperature);
-    
- document.querySelector('.charts').insertAdjacentHTML('beforebegin', `<div class="chart-position">
-   <button class="button-chart-show"><span class="button-chart-text">Show Chart</span><div class="chart-svg-box">
-   <svg class="chart-svg" >
-                <use href="./sprite.svg#icon-arrow_to_down"></use>
-            </svg>
-            </div></button>
-</div>`);
-           document.querySelector('.charts').classList.add('none')
-      const onButtomChartClickShow = document.querySelector('.button-chart-show');
-    onButtomChartClickShow.addEventListener('click', buttonChartShow)
-    console.log(onButtomChartClick);
-    function buttonChartShow() {
-        document.querySelector('.charts').classList.remove('none')
-            document.querySelector('.button-chart-show').classList.add('none')
     }
-    
+    console.log(y);
+ 
+
     const buttonChart = document.querySelector('.charts-open');
-    buttonChart.innerHTML = `<div class="chart-position">
-   <button class="button-chart-close"><span class="button-chart-text">Hide Chart</span><div class="chart-svg-box">
-   <svg class="chart-svg" >
+    buttonChart.innerHTML =
+        ` <button class="button-chart-close"><span class="button-chart-text">Show Chart</span>
+        <div class="chart-svg-box">
+            <svg class="chart-svg" >
                 <use href="./sprite.svg#icon-arrow_to_up"></use>
             </svg>
-            </div></button>
-</div>`;
-     const onButtomChartClick = document.querySelector('.button-chart-close');
-    onButtomChartClick.addEventListener('click', buttonChartRemove)
-    console.log(onButtomChartClick);
-    function buttonChartRemove() {
-        document.querySelector('.charts').classList.add('none')
-            document.querySelector('.button-chart-show').classList.remove('none')
-    }
+        </div>
+    </button>`;
+   document.querySelector('.charts-canvas').classList.add('none')
+    console.log(buttonChart);
+    const onButtomChartClick = document.querySelector('.button-chart-close');
+    onButtomChartClick.addEventListener('click', buttonChartRemove);
 
-    Chart.defaults.font.size = 14;
-// const arr = ['22.04','23.04','24.04','25.04','26.04']
-new Chart(document.getElementById("charts-line"), {
-    type: 'line',
-    data: {
-        labels: [...y],
-        datasets: [{
-            
-            data: [...temp],
-            color: '#FFFFFF',
-            label: "— Temperature, C° ",
-            borderColor: "#FF6B09",
-            fill: false
-        }, {
-            data: [...humidity],
-            label: "— Humidity, % ",
-            borderColor: "#0906EB",
-            fill: false,
-            
-        }, {
-            data: [...windSpeed],
-            label: "— Wind Speed, m/s ",
-            borderColor: "#EA9A05",
-            fill: false
-        }, {
-            data: [...pressure],
-            label: "— Atmosphere Pressure, m/m",
-            borderColor: "#067806",
-            fill: false
+    function buttonChartRemove() {
+        
+        // document.querySelector('.charts').classList.toggle('compress');
+        document.querySelector('.charts-canvas').classList.toggle('none');
+
+        if (document.querySelector(".button-chart-text").textContent === "Show Chart") {
+            document.querySelector(".button-chart-text").textContent = "Hide Chart";
+        } else {
+            document.querySelector(".button-chart-text").textContent = "Show Chart";
         }
-        ]
-    },
-    options: {
-     
-            // responsive: true,
-            // maintainAspectRatio: true,
-            scales: {
-                y: {
-                    // display: true,
-                    // title: {
-                    //     display: true,
-                    //     text:'Value of Indicators',
-                    //     color: 'rgba(255, 255, 255, 0.5)',
-                    //     font:{
-                    //         family: 'Lato',
-                    //         size: 12,
-                    //         weight: 400,
-                    //     },
-                    //     padding:{bottom:10}
-                    // },
-                    stacked: true,
-                    beginAtZero: false,
-                    gridLines: {
-                        display: true,
-                        color: "rgba(255,99,132,0.2)",
-                    }
-                },
+    }
+  Chart.defaults.font.size = 14;
+        Chart.defaults.color = 'rgba(255, 255, 255, 0.5)';
+        Chart.defaults.borderColor = 'rgba(255, 255, 255, 0.2)';
+    // const arr = ['22.04','23.04','24.04','25.04','26.04']
+    new Chart(document.getElementById("charts-line"), {
+      
+        
+        type: 'line',
+        data: {
+            labels: [...y],
+            datasets: [{
                 
-            x: {
-                gridLines: {
-                    display: false,
-                }
+                data: [...temp],
+                color: '#FFFFFF',
+                label: "— Temperature, C° ",
+                borderColor: "#FF6B09",
+                backgroundColor: '#ff6b09',
+                color: 'rgba(255, 255, 255, 0.5)',
+                fill: false
+            }, {
+                data: [...humidity],
+                label: "— Humidity, % ",
+                borderColor: "#0906EB",
+                 backgroundColor: '#0906EB',
+                fill: false,
+            
+            }, {
+                data: [...windSpeed],
+                label: "— Wind Speed, m/s ",
+                borderColor: "#EA9A05",
+                 backgroundColor: '#EA9A05',
+                fill: false
+            }, {
+                data: [...pressure],
+                label: "— Atmosphere Pressure, m/m",
+                borderColor: "#067806",
+                 backgroundColor: '#067806',
+                fill: false
             }
-            },
-            plugins:{
-                legend:{
-                    position: 'top',
-                    align: 'center',
-    
-                    labels: {
-                        color: 'rgba(255, 255, 255, 0.5)',
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                   labels: {
+               
                         boxWidth: 10,
                         boxHeight:10,
                         },
                 },
-                title:{
-                    display: true,
-                    text: 'AVERAGE:',
-                    color: 'rgba(255, 255, 255, 0.5)',
-                    align: 'start',
-                    font: {
-                        size: 12,
-                        family: "Lato",
-                        weight: 400,
-                        },
+                    
+        title: {
+        display: true,
+        text: 'AVERAGE:',
+      }
+    },
+            responsive: true,
+            scales: {
+                x: {
+                    ticks: {
+                        align: 'start',
+                        
+                }
                 },
-            },
-        }
-        
-    });
-
-}
+               
+                y: {
+                    display: true,
+                    title: {
+                        display: true,
+                        text: 'Value of Indicators',
+                        color: 'rgba(255, 255, 255, 0.5)',
+                        font: {
+                            family: 'Lato',
+                            size: 14,
+                            style: 'normal',
+                            lineHeight: 1.2,
+                            
+                        },
+                        padding: { top: 30, left: 0, right: 0, bottom: 0 }
+                    }
+                }
+            }
+        },
+    })
+};
 // const Temperature = data.map(temp => temp[0]);
 // console.log(Temperature);
 
