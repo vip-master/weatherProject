@@ -9,8 +9,10 @@ import { rendMore } from '../serg/lib.js'
 
 import daysCard from './daysCard.hbs';
 
+const fivedaysClass = document.querySelector('.fivedays');
 const weatherList = document.querySelector('.weather-list');
 const weatherTitle = document.querySelector(".weather-title");
+const weatherTitleMobile = document.querySelector(".weather-main .weather-title");
 const weatherListSlider = document.querySelector(".weather-list-slider");
 const hideMoreInfo = document.querySelector(".weather-moreInfo");
 const hideMoreInfoSlider = document.querySelector(".weather-moreInfo-slider");
@@ -39,11 +41,13 @@ weatherListSlider.insertAdjacentHTML('beforeend',
 function rendMain(data) {
     hideMoreInfo.innerHTML = '';
     hideMoreInfoSlider.innerHTML = '';
+    hideMoreInfo.classList.add('none');
     console.log('Mr_Paul');
     console.log(data);
 
     function showMoreInfo(e) {
-        
+        fivedaysClass.classList.remove('position');
+        hideMoreInfo.classList.remove('none');
         if(e.target.textContent !== 'more info') {
             return
         }
@@ -56,8 +60,8 @@ function rendMain(data) {
     weatherList.addEventListener('click', showMoreInfo);
 
     const weatherTitleCity = data.city.name + ', ' + data.city.country;
-    
     weatherTitle.innerHTML = weatherTitleCity;
+    weatherTitleMobile.innerHTML = weatherTitleCity;
 
     const dayOnCards = [];
     const dateOnCards = [];
