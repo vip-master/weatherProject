@@ -33,6 +33,7 @@ const openToday = (data) => {
     document.querySelector(".weather-main").classList.add("compress")
     document.querySelector(".weather-title").classList.add("none")
     document.querySelector(".container").classList.add("container_off")
+    document.querySelector(".container").classList.remove("poscon")
 
     rendFirst(JSON.parse(JSON.stringify(data)))
 }
@@ -42,6 +43,7 @@ const closeToday = () => {
     document.querySelector(".weather-main").classList.remove("compress")
     document.querySelector(".weather-title").classList.remove("none")
     document.querySelector(".container").classList.remove("container_off")
+    document.querySelector(".container").classList.add("poscon")
 }
 const openFDays = (data) => {
     document.querySelector(".charts").classList.remove("none")
