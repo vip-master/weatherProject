@@ -47,9 +47,9 @@
   }
 }
 .galery_item {
-  overflow: hidden;
-  max-width: 100%;
-  min-width: 120px;
+  // overflow: hidden;
+  // max-width: 100%;
+  // min-width: 115px;
 }
 
 .galery {
@@ -68,14 +68,16 @@
   padding-bottom: 18px;
   text-align: center;
   list-style: none;
-  width: 120px;
-  left: 190px;
-  top: 588px;
+  min-width: 115px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: rgba(255, 255, 255, 0.54);
   box-sizing: border-box;
   border-radius: 25px;
+  // @media (min-width: $mobile) {
+  //   min-width: 115px;
+  // }
   @media (min-width: $tablet) {
+    min-width: 120px;
     .container {
       max-width: $tablet;
       padding: 0 74px 0 74px;
