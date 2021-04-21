@@ -41,40 +41,31 @@ function rendChart(data) {
       
   }
     console.log(y);
-  
-    // const Temperature = data[0,7]
-    // console.log(Temperature);
-    
- document.querySelector('.charts').insertAdjacentHTML('beforebegin', `<div class="chart-position">
-   <button class="button-chart-show"><span class="button-chart-text">Show Chart</span><div class="chart-svg-box">
-   <svg class="chart-svg" >
-                <use href="./sprite.svg#icon-arrow_to_down"></use>
-            </svg>
-            </div></button>
-</div>`);
-           document.querySelector('.charts').classList.add('none')
-      const onButtomChartClickShow = document.querySelector('.button-chart-show');
-    onButtomChartClickShow.addEventListener('click', buttonChartShow)
-    console.log(onButtomChartClick);
-    function buttonChartShow() {
-        document.querySelector('.charts').classList.remove('none')
-            document.querySelector('.button-chart-show').classList.add('none')
-    }
-    
+ document.querySelector('.charts').classList.add('compress')
+
     const buttonChart = document.querySelector('.charts-open');
-    buttonChart.innerHTML = `<div class="chart-position">
-   <button class="button-chart-close"><span class="button-chart-text">Hide Chart</span><div class="chart-svg-box">
-   <svg class="chart-svg" >
+    buttonChart.innerHTML = 
+   ` <button class="button-chart-close"><span class="button-chart-text">Show Chart</span>
+        <div class="chart-svg-box">
+            <svg class="chart-svg" >
                 <use href="./sprite.svg#icon-arrow_to_up"></use>
             </svg>
-            </div></button>
-</div>`;
+        </div>
+    </button>`;
+
+    console.log(buttonChart);
      const onButtomChartClick = document.querySelector('.button-chart-close');
-    onButtomChartClick.addEventListener('click', buttonChartRemove)
-    console.log(onButtomChartClick);
+    onButtomChartClick.addEventListener('click', buttonChartRemove);
+
     function buttonChartRemove() {
-        document.querySelector('.charts').classList.add('none')
-            document.querySelector('.button-chart-show').classList.remove('none')
+        document.querySelector('.charts').classList.toggle('compress');
+        // document.querySelector('.chats-canvas').classList.toggle('none');
+
+        if (document.querySelector(".button-chart-text").textContent === "Show Chart") {
+            document.querySelector(".button-chart-text").textContent = "Hide Chart";
+          } else {
+            document.querySelector(".button-chart-text").textContent = "Show Chart";
+          }
     }
 
     Chart.defaults.font.size = 14;
