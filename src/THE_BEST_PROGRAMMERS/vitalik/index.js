@@ -114,13 +114,13 @@ function rendChart(data) {
             maintainAspectRatio: false,
             plugins: {
                 legend: {
-                   
-                },
-                    labels: {
+                   labels: {
                
                         boxWidth: 10,
                         boxHeight:10,
                         },
+                },
+                    
         title: {
         display: true,
         text: 'AVERAGE:',
