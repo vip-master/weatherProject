@@ -1,65 +1,158 @@
+// // Фон подключать так
+// // body {
+// //     background-image: url(./THE_BEST_PROGRAMMERS/_your_name/images/arms.jpg);
+// // }
+// // обратите внимание используется относительный путь в Вашу папку с Вашими изображениями
+// // Тут не использовать спрайт!
+// .charts {
+//     //     width: 1060px;
+//     // height: 540px;
+//     margin-top: 15px;
+//     //     padding-top: 88px;
+//     // padding-left: 80px;
+//     // padding-bottom: 40px;
+//     // padding-right: 180px;
+// // margin-bottom: 101px;
+//     background-color: rgba(16, 33, 54, 0.8);
+//     box-shadow: 0px 8px 43px rgb(16 33 54 / 60%);
+//     border-radius: 34px;
+// //     @media screen and (min-width:1200px) {
+// //         .charts{
+// //              width: 1060px;
+// //     height: 540px;
+// //     padding-top: 88px;
+// //     padding-left: 80px;
+// //     padding-bottom: 40px;
+// //     padding-right: 180px;   
+// //         }
+
+// //   } 
+// //     @media screen and (min-width:768px) {
+// //     width: 620px;
+// //     height: 462px;
+// //         padding-top: 88px;
+// //     padding-left: 33px;
+// //     padding-bottom: 41px;
+// //     padding-right: 33px;
+// //   }
+// //     @media screen and(min-width:280px) {
+        
+// //     width: 280px;
+// //     height: 516px;
+// //           padding-top: 26px;
+// //     padding-left: 11px;
+// //     padding-bottom: 30px;
+// //     // padding-right: 33px;
+// //   }
+
+// }
+
+// .button-chart-close {
+//  border: none;
+//     background-color: transparent;
+//     color: #FF6B09;
+//     display: flex;
+//     align-items: center;
+//     // opacity: 1;
+// position:absolute;
+// left: calc(50% - 50px);
+// top: -68px;
+// }
+// .chart-position{
+//     position: relative;
+// }
+// .chart-svg{
+// width: 8px;
+// height: 16px;
+// fill: none;
+// stroke: #ffffff;
+// top: 8px;
+// right: 8px;
+    
+// }
+// .chart-svg-box{
+// margin-left: 10px;
+// display: flex;
+// align-items: center;
+// justify-content: center;
+// width: 28px;
+// height: 28px;
+// border-radius: 50%;
+// background: rgba(255, 255, 255, 0.2);
+
+// border: 1px solid rgba(0, 0, 0, 0.1);
+// }
+// .button-chart-text{
+// text-decoration: underline;
+// }
+//     // position: absolute;
+//     // display: none;
+//     // top: 8px;
+//     // right: 8px;
+//     // display: flex;
+//     // align-items: center;
+//     // justify-content: center;
+//     // width: 30px;
+//     // height: 30px;
+//     // border-radius: 50%;
+//     // background: rgba(255, 255, 255, 0.2);
+//     // border: 1px solid rgba(0, 0, 0, 0.1);
+//     @media screen and(min-width:$start) {
+//         .charts{
+//             width: 280px;
+//             height: 516px;
+//             padding-top: 26px;
+//             padding-left: 11px;
+//             padding-bottom: 30px; 
+//         }    
+        
+//         // padding-right: 33px;
+//     }
+//     @media screen and (min-width:$tablet) {
+//         .charts{
+//             width: 620px;
+//             height: 462px;
+//             padding-top: 88px;
+//             padding-left: 33px;
+//             padding-bottom: 41px;
+//             padding-right: 33px;    
+//         }   
+        
+//     }
+//     @media screen and (min-width:$desktop) {
+//       .charts{
+//   width: 1060px;
+//   height: 540px;
+//   padding-top: 88px;
+//   padding-left: 80px;
+//   padding-bottom: 40px;
+//   padding-right: 180px;   
+//       }
+
+// } 
 // Фон подключать так
 // body {
 //     background-image: url(./THE_BEST_PROGRAMMERS/_your_name/images/arms.jpg);
 // }
 // обратите внимание используется относительный путь в Вашу папку с Вашими изображениями
 // Тут не использовать спрайт!
-.charts {
-    //     width: 1060px;
-    // height: 540px;
-    margin-top: 15px;
-    //     padding-top: 88px;
-    // padding-left: 80px;
-    // padding-bottom: 40px;
-    // padding-right: 180px;
-// margin-bottom: 101px;
-    background-color: rgba(16, 33, 54, 0.8);
-    box-shadow: 0px 8px 43px rgb(16 33 54 / 60%);
-    border-radius: 34px;
-//     @media screen and (min-width:1200px) {
-//         .charts{
-//              width: 1060px;
-//     height: 540px;
-//     padding-top: 88px;
-//     padding-left: 80px;
-//     padding-bottom: 40px;
-//     padding-right: 180px;   
-//         }
-
-//   } 
-//     @media screen and (min-width:768px) {
-//     width: 620px;
-//     height: 462px;
-//         padding-top: 88px;
-//     padding-left: 33px;
-//     padding-bottom: 41px;
-//     padding-right: 33px;
-//   }
-//     @media screen and(min-width:280px) {
-        
-//     width: 280px;
-//     height: 516px;
-//           padding-top: 26px;
-//     padding-left: 11px;
-//     padding-bottom: 30px;
-//     // padding-right: 33px;
-//   }
-
-}
-
+// .charts {
+//         // overflow-x: scroll;
+//     // width: 100%;
+//     // height: 516px;
+//     // padding-top: 20px;
+//     // margin-top: 15px;
+    // background-color: rgba(16, 33, 54, 0.8);
+    // box-shadow: 0px 8px 43px rgb(16 33 54 / 60%);
+    // border-radius: 34px;
+// }
 .button-chart-close {
- border: none;
+    border: none;
     background-color: transparent;
     color: #FF6B09;
     display: flex;
     align-items: center;
-    // opacity: 1;
-position:absolute;
-left: calc(50% - 50px);
-top: -68px;
-}
-.chart-position{
-    position: relative;
+    margin: 0 auto;
 }
 .chart-svg{
 width: 8px;
@@ -67,8 +160,7 @@ height: 16px;
 fill: none;
 stroke: #ffffff;
 top: 8px;
-right: 8px;
-    
+right: 8px;    
 }
 .chart-svg-box{
 margin-left: 10px;
@@ -79,54 +171,100 @@ width: 28px;
 height: 28px;
 border-radius: 50%;
 background: rgba(255, 255, 255, 0.2);
-
 border: 1px solid rgba(0, 0, 0, 0.1);
 }
 .button-chart-text{
 text-decoration: underline;
 }
-    // position: absolute;
-    // display: none;
-    // top: 8px;
-    // right: 8px;
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
-    // width: 30px;
-    // height: 30px;
-    // border-radius: 50%;
-    // background: rgba(255, 255, 255, 0.2);
-    // border: 1px solid rgba(0, 0, 0, 0.1);
+.button-chart-show{
+    margin-top: 21px;
+    border: none;
+    background-color: transparent;
+    color: #FF6B09;
+    display: flex;
+    align-items: center;
+left: calc(50% - 50px); 
+}
+.charts-open{
+    // width: fit-content;
+    margin: 0 auto;
+}
+.chatrs-canvas{
+        background-color: rgba(16, 33, 54, 0.8);
+    box-shadow: 0px 8px 43px rgb(16 33 54 / 60%);
+    border-radius: 34px;
+// width: 100%;
+//     height: 516px;
+    padding-top: 20px;
+    margin-top: 15px;
+    background-color: rgba(16, 33, 54, 0.8);
+    box-shadow: 0px 8px 43px rgb(16 33 54 / 60%);
+    border-radius: 34px;
+    // width: 555px;
+    // height: 425px;
+    // position: relative;
+    // margin: 0 auto;
+}
+.charts-open {
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+   #charts-line{
+       width: 100%;
+    height: 516px;
+    background-color: rgba(16, 33, 54, 0.8);
+    box-shadow: 0px 8px 43px rgb(16 33 54 / 60%);
+    border-radius: 34px;
+    // padding-top: 20px;
+    // padding-left: 20px;
+    // padding-bottom: 30px; 
+   }
     @media screen and(min-width:$start) {
-        .charts{
+        .charts-canvas{
             width: 280px;
             height: 516px;
-            padding-top: 26px;
+      
+        } 
+          #charts-line{
+      padding-top: 26px;
             padding-left: 11px;
             padding-bottom: 30px; 
-        }    
+          }   
         
         // padding-right: 33px;
     }
     @media screen and (min-width:$tablet) {
-        .charts{
+       .charts-canvas{
             width: 620px;
             height: 462px;
-            padding-top: 88px;
+        //    padding-top: 78px;
+        //     padding-left: 33px;
+        //     padding-bottom: 41px;
+        //     padding-right: 33px;    
+        }   
+          #charts-line{
+     padding-top: 78px;
             padding-left: 33px;
             padding-bottom: 41px;
             padding-right: 33px;    
-        }   
-        
+          }
     }
     @media screen and (min-width:$desktop) {
-      .charts{
+     .charts-canvas{
   width: 1060px;
   height: 540px;
-  padding-top: 88px;
+//  padding-top: 88px;
+//   padding-left: 80px;
+//   padding-bottom: 40px;
+//   padding-right: 80px;   
+      }
+      
+#charts-line{
+ padding-top: 88px;
   padding-left: 80px;
   padding-bottom: 40px;
-  padding-right: 180px;   
-      }
-
+  padding-right: 80px;   
+}
 } 
