@@ -28,23 +28,14 @@ const tranformNumbers=(number)=>{
 }
 
 function rendFirst(data){
-    const toDay = data.list[0]
-    .map(el => {
-    const newEl = {}
-    newEl.min= el.main.temp_min
-    newEl.max= el.main.temp_max
-    return newEl
-   })
-   let totalMin = 0;
-   let totalMax = 0;
-   toDay.forEach(el => {
-       totalMin += el.min;
-       totalMax += el.max;
-    });
+    const min = data.list[0]
+    .map(el => el.main.temp_min)
+    const max = data.list[0]
+    .map(el => el.main.temp_max)
     const name = data.city.name
     const country = data.city.country
-    const tempMax = Math.round(totalMax/toDay.length);
-    const tempMin = Math.round(totalMin/toDay.length);
+    const tempMax = Math.round(Math.max(...max));
+    const tempMin = Math.round(Math.min(...min));
     const tempNow = Math.round(data.list[0][0].main.temp)
     const icon = data.list[0][0].weather[0].icon
     const up = {name,country,tempNow,tempMin,tempMax,icon};
@@ -63,11 +54,12 @@ function rendFirst(data){
         const month = months[toDate[1]];
         const dayNumber = toDate[2];
         const dayOfWeek = toDate[0];
-        const sunrise = tranformNumbers(data.city.sunrise);
-        const sunset = tranformNumbers(data.city.sunset);
+        const sunrise = tranformNumbers(data.city.sunrise).slice(0,5);
+        const sunset = tranformNumbers(data.city.sunset).slice(0,5);
         const down = {time,month,dayNumber,dayOfWeek,sunrise,sunset};
         if(document.querySelector(".firstpage-box").innerHTML){
-            document.querySelector('.today-list__number').textContent=`${dayNumber} ${dayOfWeek}`
+            document.querySelector('.today-list__number').innerHTML = 
+            `<h2 class="today-list__number">${dayNumber}<sup>th</sup> ${dayOfWeek}</h2>`
             document.querySelector('.today-list__dayOfWeek').textContent=`${month}`
             document.querySelector('.today-list__time').textContent=`${time}`
             document.querySelector('.today-list__sunrice').innerHTML = 
