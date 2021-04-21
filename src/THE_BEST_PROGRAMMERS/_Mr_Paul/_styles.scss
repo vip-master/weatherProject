@@ -153,11 +153,13 @@
   color: #ffffff;
   opacity: 0.3;
 }
+
 @media (min-width: $mobile) {
   .weather-list {
     justify-content: center;
   }
 }
+
 
 @media (min-width: $tablet) {
   .fivedays {
