@@ -123,7 +123,8 @@ function rendChart(data) {
                     
         title: {
         display: true,
-        text: 'AVERAGE:',
+            text: 'AVERAGE:',
+         align: 'start',
       }
     },
             responsive: true,
