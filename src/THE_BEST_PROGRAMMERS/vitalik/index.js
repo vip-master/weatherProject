@@ -41,7 +41,7 @@ function rendChart(data) {
       
     }
     console.log(y);
-    // document.querySelector('.charts').classList.add('')
+ 
 
     const buttonChart = document.querySelector('.charts-open');
     buttonChart.innerHTML =
@@ -52,7 +52,7 @@ function rendChart(data) {
             </svg>
         </div>
     </button>`;
-
+   document.querySelector('.charts-canvas').classList.add('none')
     console.log(buttonChart);
     const onButtomChartClick = document.querySelector('.button-chart-close');
     onButtomChartClick.addEventListener('click', buttonChartRemove);
@@ -60,7 +60,7 @@ function rendChart(data) {
     function buttonChartRemove() {
         
         // document.querySelector('.charts').classList.toggle('compress');
-        // document.querySelector('.chats-canvas').classList.toggle('none');
+        document.querySelector('.charts-canvas').classList.toggle('none');
 
         if (document.querySelector(".button-chart-text").textContent === "Show Chart") {
             document.querySelector(".button-chart-text").textContent = "Hide Chart";
@@ -68,7 +68,9 @@ function rendChart(data) {
             document.querySelector(".button-chart-text").textContent = "Show Chart";
         }
     }
-    Chart.defaults.font.size = 14;
+  Chart.defaults.font.size = 14;
+        Chart.defaults.color = 'rgba(255, 255, 255, 0.5)';
+        Chart.defaults.borderColor = 'rgba(255, 255, 255, 0.2)';
     // const arr = ['22.04','23.04','24.04','25.04','26.04']
     new Chart(document.getElementById("charts-line"), {
       
@@ -83,22 +85,26 @@ function rendChart(data) {
                 label: "— Temperature, C° ",
                 borderColor: "#FF6B09",
                 backgroundColor: '#ff6b09',
+                color: 'rgba(255, 255, 255, 0.5)',
                 fill: false
             }, {
                 data: [...humidity],
                 label: "— Humidity, % ",
                 borderColor: "#0906EB",
+                 backgroundColor: '#0906EB',
                 fill: false,
             
             }, {
                 data: [...windSpeed],
                 label: "— Wind Speed, m/s ",
                 borderColor: "#EA9A05",
+                 backgroundColor: '#EA9A05',
                 fill: false
             }, {
                 data: [...pressure],
                 label: "— Atmosphere Pressure, m/m",
                 borderColor: "#067806",
+                 backgroundColor: '#067806',
                 fill: false
             }
             ]
@@ -107,6 +113,14 @@ function rendChart(data) {
             responsive: true,
             maintainAspectRatio: false,
             plugins: {
+                legend: {
+                   
+                },
+                    labels: {
+               
+                        boxWidth: 10,
+                        boxHeight:10,
+                        },
         title: {
         display: true,
         text: 'AVERAGE:',
@@ -114,13 +128,19 @@ function rendChart(data) {
     },
             responsive: true,
             scales: {
+                x: {
+                    ticks: {
+                        align: 'start',
+                        
+                }
+                },
                
                 y: {
                     display: true,
                     title: {
                         display: true,
                         text: 'Value of Indicators',
-                      color: 'rgba(255, 255, 255, 0.5)',
+                        color: 'rgba(255, 255, 255, 0.5)',
                         font: {
                             family: 'Lato',
                             size: 14,
