@@ -30,18 +30,20 @@ const openToday = (data) => {
 
     document.querySelector(".firstpage-up").classList.remove("none")
     document.querySelector(".firstpage-down").classList.remove("none")
-    document.querySelector(".weather-main").classList.add("compress")
+    document.querySelector(".weather-main").classList.add("none")
     document.querySelector(".weather-title").classList.add("none")
     document.querySelector(".container").classList.add("container_off")
+    document.querySelector(".weather-toggle").classList.add("margin")
 
     rendFirst(JSON.parse(JSON.stringify(data)))
 }
 const closeToday = () => {
     document.querySelector(".firstpage-up").classList.add("none")
     document.querySelector(".firstpage-down").classList.add("none")
-    document.querySelector(".weather-main").classList.remove("compress")
+    document.querySelector(".weather-main").classList.remove("none")
     document.querySelector(".weather-title").classList.remove("none")
     document.querySelector(".container").classList.remove("container_off")
+    document.querySelector(".weather-toggle").classList.remove("margin")
 }
 const openFDays = (data) => {
     document.querySelector(".charts").classList.remove("none")

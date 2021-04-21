@@ -9,6 +9,34 @@
   margin-top: 60px;
 }
 
+.fiveDaysScrollLeft {
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.fiveDaysScrollRight {
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.five-days-arrow {
+  width: 15px;
+  height: 27px;
+  margin-bottom: 10px;
+  stroke: rgba(255, 255, 255, 1);
+  fill: rgba(255, 255, 255, 0);
+}
+
 .position {
   margin-top: 60px;
 
@@ -44,10 +72,13 @@
   padding: 0 20px;
 }
 
+.weather-list-container {
+  width: 405px;
+  overflow: hidden;
+}
 .weather-list {
-  width: 450px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .weather_icon {
@@ -60,14 +91,6 @@
 
 .weather-list-slider {
   text-align: center;
-}
-
-.five-days-arrow {
-  width: 5px;
-  height: 8px;
-  margin-bottom: 10px;
-  stroke: none;
-  fill: rgba(255, 255, 255, 0.54);
 }
 
 .days_list_item_day {
@@ -130,12 +153,13 @@
   color: #ffffff;
   opacity: 0.3;
 }
-// @media (min-width: $mobile) {
-//   .weather-main {
-//     padding-left: 0;
-//     padding-right: 0;
-//   }
-// }
+
+@media (min-width: $mobile) {
+  .weather-list {
+    justify-content: center;
+  }
+}
+
 
 @media (min-width: $tablet) {
   .fivedays {
@@ -159,8 +183,10 @@
     padding-bottom: 40px;
   }
 
-  .weather-list {
+  .weather-list-container {
     width: auto;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .weather-main .weather-title {
@@ -199,8 +225,6 @@
 
   .weather-list {
     justify-content: space-between;
-    padding-left: 20px;
-    padding-right: 20px;
   }
 
   .weather-list-slider {
@@ -250,7 +274,7 @@
     transform: translateX(-50%);
   }
 
-  .weather-list {
+  .weather-list-container {
     padding-left: 110px;
     padding-right: 110px;
   }
