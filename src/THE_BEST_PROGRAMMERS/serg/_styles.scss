@@ -11,16 +11,15 @@
       padding: 0 20px 0 20px;
     }
   }
-  // padding-left: 15px;
 }
 .without-jc {
   justify-content: center;
 }
+
 .weather-moreInfo {
   display: flex;
-  margin-bottom: 49px;
-  overflow: hidden;
-
+  min-width: max-content;
+  padding-bottom: 20px;
   @media (max-width: 479px) {
     justify-content: start;
     .container {
@@ -28,16 +27,13 @@
     }
   }
   @media (min-width: $tablet) {
-    margin-top: 40px;
-    margin-bottom: 30px;
+    padding-bottom:0px;
     .container {
       max-width: $tablet;
       padding: 0 74px 0 74px;
     }
   }
   @media (min-width: $desktop) {
-    margin-bottom: 0px;
-    margin-top: 40px;
     justify-content: center;
 
     .container {
@@ -56,6 +52,9 @@
 }
 .border {
   border: 2px solid rgba(255, 255, 255, 0.2);
+}
+.galery_item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 .galery_item {
   padding-top: 15px;
@@ -88,16 +87,10 @@
   @media (min-width: $tablet) {
     padding-right: 19px;
     padding-left: 19px;
-
-    // .container {
-    //   max-width: $tablet;
-    //   padding: 0 74px 0 74px;
-    // }
   }
 
   @media (min-width: $desktop) {
     justify-content: center;
-    // width: 1060px;
     .container {
       max-width: $desktop;
       padding: 0 110px 0 110px;
@@ -139,9 +132,8 @@
 .peshka {
   margin: 0px;
 }
-.ewcw {
+.ewcw_right{
   display: none;
-  display: flex;
   align-items: center;
   justify-content: center;
   width: 30px;
@@ -150,13 +142,43 @@
   background: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(0, 0, 0, 0.1);
   @media (min-width: $mobile) {
-    // display: none;
     .container {
       padding: 0 20px 0 20px;
     }
   }
   @media (min-width: $tablet) {
-    // justify-content: center;
+    display: flex;
+    .container {
+      max-width: $tablet;
+      padding: 0 74px 0 74px;
+    }
+  }
+
+  @media (min-width: $desktop) {
+    display: none;
+    .container {
+      max-width: $desktop;
+      padding: 0 110px 0 110px;
+    }
+  }
+}
+
+.ewcw_left {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  @media (min-width: $mobile) {
+    .container {
+      padding: 0 20px 0 20px;
+    }
+  }
+  @media (min-width: $tablet) {
+    display: flex;
     .container {
       max-width: $tablet;
       padding: 0 74px 0 74px;
@@ -176,11 +198,13 @@
   stroke: #ffffff;
 }
 .weather-moreInfo-slider {
-  margin-right: 30px;
+  max-width: 100%;
+  height: 0px;
   display: none;
-  justify-content: flex-end;
+  justify-content: space-between;
   @media (min-width: $tablet) {
     display: flex;
+        margin-bottom: 12px;
     .container {
       max-width: $tablet;
       padding: 0 74px 0 74px;
@@ -195,7 +219,20 @@
     }
   }
 }
+
 .weather-moreInfo-container {
+  margin-bottom: 29px;
+  overflow-x: scroll;
+  &::-webkit-scrollbar {
+        //  display: block;
+         height: 2px;
+        background-color: rgba(255, 255, 255, 0.2);
+  };
+   &::-webkit-scrollbar-thumb {
+    background-color: $accent;
+
+}
+  
   @media (min-width: $mobile) {
     justify-content: start;
     .container {
@@ -203,8 +240,11 @@
     }
   }
   @media (min-width: $tablet) {
+    overflow-x: hidden;
     padding-left: 0px;
     padding-right: 0px;
+    margin-top: 40px;
+    margin-bottom: 30px;
     .container {
       max-width: $tablet;
       padding: 0 74px 0 74px;
@@ -212,6 +252,7 @@
   }
   @media (min-width: $desktop) {
     margin-bottom: 0px;
+    margin-top: 40px;
 
     .container {
       max-width: $desktop;

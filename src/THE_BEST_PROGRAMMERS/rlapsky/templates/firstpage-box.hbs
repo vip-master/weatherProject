@@ -1,6 +1,6 @@
 <div class="today-info">
     <div class="today-list">
-        <h2 class="today-list__number">{{dayNumber}}<sub>{{th}}</sub>{{dayOfWeek}}</h2>
+        <h2 class="today-list__number">{{dayNumber}}<sup>th</sup> {{dayOfWeek}}</h2>
         <div class="today-list__box">
             <ul class="today-list__item">
                 <li class="today-list__dayOfWeek">{{month}}</li>
@@ -28,7 +28,9 @@
     </div>
 </div>
 <div class="quotes">
-    <p class="quotes__text">Who cares about the clouds when we're together? Just sing a song and bring the sunny
+    <p class="quotes__text"><svg class="quotes__svg">
+        <use href="./sprite.svg#quote"></use>
+    </svg>Who cares about the clouds when we're together? Just sing a song and bring the sunny
         weather.</p>
     <p class="quotes__autor">Dale Evans</p>
 </div>

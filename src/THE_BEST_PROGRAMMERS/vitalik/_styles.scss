@@ -221,11 +221,15 @@ left: calc(50% - 50px);
 }
 .charts-open {
     margin: 0 auto;
-    position: absolute;
+    // position: absolute;
     left: 50%;
-    transform: translateX(-50%);
+    // transform: translateX(-50%);
     top: 26px;
     z-index: 20;
+}
+.grafic-canvas{
+    position: absolute;
+    transform: translateX(-50%);
 }
 .charts{
 
