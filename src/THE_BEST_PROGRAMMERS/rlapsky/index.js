@@ -43,8 +43,8 @@ function rendFirst(data){
         document.querySelector('.today__svg use').setAttribute("href",`./sprite.svg#${icon}`)
         document.querySelector('.today__city').textContent=`${up.name}, ${up.country}`
         document.querySelector('.today__temp').textContent=`${tempNow}`
-        document.querySelector('.today__min__temp').textContent=`${tempMin}&deg;`
-        document.querySelector('.today__max__temp').textContent=`${tempMax}&deg;`
+        document.querySelector('.today__min__temp').textContent=`${tempMin}&deg`
+        document.querySelector('.today__max__temp').textContent=`${tempMax}&deg`
     }
     else{
         document.querySelector(".firstpage-up").innerHTML= tempFirst(up);
@@ -59,7 +59,7 @@ function rendFirst(data){
         const down = {time,month,dayNumber,dayOfWeek,sunrise,sunset};
         if(document.querySelector(".firstpage-box").innerHTML){
             document.querySelector('.today-list__number').innerHTML = 
-            `<h2 class="today-list__number">${dayNumber}<sup>th</sup> ${dayOfWeek}</h2>`
+            `<h2 class="today-list__number">${dayNumber}<sup>th</sup>${dayOfWeek}</h2>`
             document.querySelector('.today-list__dayOfWeek').textContent=`${month}`
             document.querySelector('.today-list__time').textContent=`${time}`
             document.querySelector('.today-list__sunrice').innerHTML = 
