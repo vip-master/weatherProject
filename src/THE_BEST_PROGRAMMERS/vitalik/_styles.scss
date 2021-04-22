@@ -244,6 +244,8 @@ left: calc(50% - 50px);
   ;
    
     padding-bottom: 30px;
+  padding-right: 15px;
+  padding-left: 15px;
     // overflow-x: scroll;
     // &::-webkit-scrollbar {
     //     // margin-bottom: 30px;
@@ -267,30 +269,20 @@ left: calc(50% - 50px);
     // }
 }
 .charts-container-else{
-   overflow-x: scroll;
-    &::-webkit-scrollbar {
-        // margin-bottom: 30px;
-        position: absolute;
-        display: block;
-        height: 2px;
-        max-width: 250px;
-        background-color: rgba(255, 255, 255, 0.2);
-    }
-    &::-webkit-scrollbar-track {
-        background: rgba(255, 255, 255, 0.2);
-    }
-    &::-webkit-scrollbar-thumb {
-        background-color: #ff6b09;
-    }
+ overflow-x: scroll;
     @media screen and (min-width: 768px){
         overflow-x: inherit;
         padding-bottom: 0;
     }
-    @media screen and (min-width: 1280px){
-        overflow-x: inherit;
-    }  
-}
+&::-webkit-scrollbar {
+        height: 2px;
+        background-color: rgba(255, 255, 255, 0.2);
+  };
+   &::-webkit-scrollbar-thumb {
+    background-color: $accent;
+  }
 
+}
 .rotate{
     transform:rotate(180deg);
 }
