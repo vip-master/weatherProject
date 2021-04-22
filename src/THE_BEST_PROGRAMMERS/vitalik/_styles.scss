@@ -208,7 +208,8 @@ left: calc(50% - 50px);
     width: 507px;
     // height: 425px;
     position: relative;
-    margin: 0 auto;
+    margin: 0 auto; 
+      padding-top: 58px;
     padding-bottom: 55px;
 }
 .charts-open {
@@ -230,6 +231,7 @@ left: calc(50% - 50px);
     position: relative;
 }
 .charts-continer{
+ 
  margin-top: -5px;
     background-color: rgba(16, 33, 54, 0.8);
     box-shadow: 0px 8px 43px rgb(16 33 54 / 60%);
