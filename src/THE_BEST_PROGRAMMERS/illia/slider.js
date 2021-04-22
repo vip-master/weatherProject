@@ -70,6 +70,7 @@ const init = () => {
         b1.style.display = "inline-block"
         b2.style.display = "inline-block"
     }
+    list.style.transform = `none`
 }
 
 export { initSlider, init }
