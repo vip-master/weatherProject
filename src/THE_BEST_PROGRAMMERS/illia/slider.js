@@ -86,10 +86,12 @@ const initSlider = function({ container, list, prevButton, nextButton, step, isH
     if (prevButton) prevButton.addEventListener("click", prev)
     if (nextButton) nextButton.addEventListener("click", next)
     arrInit.push(init)
+    return (arrInit.length - 1)
 }
 
-const init = () => {
-    arrInit.forEach(e => e())
+const init = (id, step) => {
+    if (id) arrInit[id](step)
+    else arrInit.forEach(e => e())
 }
 
 
