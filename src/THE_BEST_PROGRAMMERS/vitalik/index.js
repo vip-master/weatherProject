@@ -10,10 +10,13 @@
 // Оnpm start
 import Chart from 'chart.js/auto';
 import { switchPosition } from '../_Mr_Paul/index';
+let newChart 
 function rendChart(data) {
     console.log('vitalik')
     console.log(data);
-    
+    if (newChart) {
+     newChart.destroy()
+ }
     const grafikTemperature = data.map(temperature => {
         return temperature[0]
     })
@@ -79,7 +82,7 @@ function rendChart(data) {
         Chart.defaults.color = 'rgba(255, 255, 255, 0.5)';
         Chart.defaults.borderColor = 'rgba(255, 255, 255, 0.2)';
     // const arr = ['22.04','23.04','24.04','25.04','26.04']
-    new Chart(document.getElementById("charts-line"), {
+newChart =   new Chart(document.getElementById("charts-line"), {
       
         
         type: 'line',
@@ -161,7 +164,8 @@ function rendChart(data) {
                 }
             }
         },
-    })
+ })
+
 };
 // const Temperature = data.map(temp => temp[0]);
 // console.log(Temperature);
