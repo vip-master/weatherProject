@@ -43,8 +43,8 @@ function rendFirst(data){
         document.querySelector('.today__svg use').setAttribute("href",`./sprite.svg#${icon}`)
         document.querySelector('.today__city').textContent=`${up.name}, ${up.country}`
         document.querySelector('.today__temp').textContent=`${tempNow}`
-        document.querySelector('.today__min__temp').textContent=`${tempMin}&deg`
-        document.querySelector('.today__max__temp').textContent=`${tempMax}&deg`
+        document.querySelector('.today__min__temp').textContent=`${tempMin}&deg;`
+        document.querySelector('.today__max__temp').textContent=`${tempMax}&deg;`
     }
     else{
         document.querySelector(".firstpage-up").innerHTML= tempFirst(up);
@@ -73,6 +73,4 @@ function rendFirst(data){
 
 }
  
-
-
 export {rendFirst}
