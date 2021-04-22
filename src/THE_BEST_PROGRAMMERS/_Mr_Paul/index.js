@@ -9,6 +9,8 @@ import { rendMore } from '../serg/lib.js'
 
 import daysCard from './daysCard.hbs';
 
+import { initSlider, init } from '../illia/slider';
+
 let isMoreInfo = false;
 const fivedaysClass = document.querySelector('.fivedays');
 const weatherList = document.querySelector('.weather-list');
@@ -28,7 +30,8 @@ const weekDays = {
     'Sat': 'Saturday',
 };
 
-weatherListSlider.insertAdjacentHTML('beforeend', 
+
+weatherListSlider.innerHTML =  
     `<button class="fiveDaysScrollLeft">
         <svg class="five-days-arrow">
             <use href="./sprite.svg#icon-arrow_to_left"></use>
@@ -38,12 +41,16 @@ weatherListSlider.insertAdjacentHTML('beforeend',
         <svg class="five-days-arrow">
             <use href="./sprite.svg#icon-arrow_to_right"></use>
         </svg>
-    </button>`);
+    </button>`;
+
+    // initSlider();
 
 function rendMain(data) {
+    // init();
+
     isMoreInfo = false;
-    hideMoreInfo.innerHTML = '';
-    hideMoreInfoSlider.innerHTML = '';
+    // hideMoreInfo.innerHTML = '';
+    // hideMoreInfoSlider.innerHTML = '';
     fivedaysClass.classList.remove('hundred');
     hideMoreInfo.classList.add('none');
     moreInfoContainer.classList.add('none');
