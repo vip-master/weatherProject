@@ -27,7 +27,7 @@ let showToday = true
 let lastData = null
 
 const openToday = (data) => {
-
+    document.querySelector(".fivedays").classList.add(".compress")
     document.querySelector(".firstpage-up").classList.remove("none")
     document.querySelector(".firstpage-down").classList.remove("none")
     document.querySelector(".weather-main").classList.add("none")
@@ -38,6 +38,7 @@ const openToday = (data) => {
     rendFirst(JSON.parse(JSON.stringify(data)))
 }
 const closeToday = () => {
+    document.querySelector(".fivedays").classList.remove(".compress")
     document.querySelector(".firstpage-up").classList.add("none")
     document.querySelector(".firstpage-down").classList.add("none")
     document.querySelector(".weather-main").classList.remove("none")

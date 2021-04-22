@@ -2,15 +2,16 @@
     display: none !important;
 }
 
-// .compress {
-//     border: none !important;
-//     background-color: transparent !important;
-//     max-width: 0px !important;
-//     max-height: 0px !important;
-//     padding: 0 !important;
-//     margin: 0 !important;
-//     box-shadow: none !important;
-// }
+.compress {
+    border: none !important;
+    background-color: transparent !important;
+    max-width: 0px !important;
+    max-height: 0px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+}
+
 .container_off {
     @media (min-width: $desktop) {
         max-width: unset!important;
