@@ -108,7 +108,7 @@ body{
     font-style: normal;
     font-weight: bold;
     font-size: 14px;
-    line-height: 17px;
+    line-height: 15px;
     display: flex;
     align-items: center;
     text-align: center;
@@ -126,7 +126,7 @@ body{
     font-style: normal;
     font-weight: bold;
     font-size: 14px;
-    line-height: 17px;
+    line-height: 15px;
     display: flex;
     align-items: center;
     text-align: center;
@@ -233,6 +233,30 @@ body{
     margin-top: 15px;
     font-style: normal;
 }
+.square-1 {
+    position: absolute;
+    width: 197.85px;
+    height: 197.85px;
+    left: -133px;
+    top: -46.08px;
+    
+    border: 4px solid rgba(255, 255, 255, 0.15);
+    box-sizing: border-box;
+    border-radius: 30px;
+    transform: rotate(-30deg);
+}
+.square-2 {
+    position: absolute;
+    width: 197.85px;
+    height: 197.85px;
+    left: 632px;
+    top: 3.92px;
+    
+    border: 4px solid rgba(255, 255, 255, 0.15);
+    box-sizing: border-box;
+    border-radius: 30px;
+    transform: rotate(-30deg);;
+}
 
 @media screen and (min-width: 480px) {
     .today {
@@ -317,7 +341,7 @@ body{
 
     .today-list__number {
         font-size: 90px;
-        line-height: 99px;
+        line-height: 96px;
         text-align: center;
     }
 
@@ -337,7 +361,7 @@ body{
 
     .today {
         width: 450px;
-        margin: 92px 0px 20px 0px;
+        margin: 92px 0px 21px 0px;
         margin-left: auto;
         border-radius: 34px 0px 0px 34px;
     }
