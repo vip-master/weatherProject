@@ -44,6 +44,8 @@ function rendMain(data) {
     hideMoreInfo.innerHTML = '';
     hideMoreInfoSlider.innerHTML = '';
     hideMoreInfo.classList.add('none');
+    document.querySelector('.weather-moreInfo-container').classList.add('none');
+    document.querySelector('.weather-moreInfo-slider').classList.add('none');
     console.log('Mr_Paul');
     console.log(data);
 
@@ -51,6 +53,8 @@ function rendMain(data) {
         isMoreInfo = true;
         fivedaysClass.classList.remove('position');
         hideMoreInfo.classList.remove('none');
+        document.querySelector('.weather-moreInfo-container').classList.remove('none');
+        document.querySelector('.weather-moreInfo-slider').classList.remove('none');
         if(e.target.textContent !== 'more info') {
             return
         }
@@ -61,6 +65,12 @@ function rendMain(data) {
     }
 
     weatherList.addEventListener('click', showMoreInfo);
+
+    function mobileSlider() {
+        console.log(document.querySelector('.weather-list-container'));
+        document.querySelector('.weather-list-container').scrollLeft -= 20;
+    }
+    document.querySelector('.fiveDaysScrollRight').addEventListener('click', mobileSlider);
 
     const weatherTitleCity = data.city.name + ', ' + data.city.country;
     weatherTitle.innerHTML = weatherTitleCity;
