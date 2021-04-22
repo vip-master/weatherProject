@@ -9,6 +9,7 @@
 // Chart.register(...registerables);
 // Оnpm start
 import Chart from 'chart.js/auto';
+import { switchPosition } from '../_Mr_Paul/index';
 function rendChart(data) {
     console.log('vitalik')
     console.log(data);
@@ -40,8 +41,9 @@ function rendChart(data) {
         y.push(month[i] + ' ' + daily[i] + ', ' + year[i])
       
     }
-    console.log(y);
- 
+   
+    y[4]=' '
+  console.log(y);
 
     const buttonChart = document.querySelector('.charts-open');
     buttonChart.innerHTML =
@@ -52,6 +54,7 @@ function rendChart(data) {
             </svg>
         </div>
     </button>`;
+    
    document.querySelector('.charts-canvas').classList.add('none')
     console.log(buttonChart);
     const onButtomChartClick = document.querySelector('.button-chart-close');
@@ -61,13 +64,17 @@ function rendChart(data) {
         
         // document.querySelector('.charts').classList.toggle('compress');
         document.querySelector('.charts-canvas').classList.toggle('none');
-
+       
+        switchPosition();
         if (document.querySelector(".button-chart-text").textContent === "Show Chart") {
             document.querySelector(".button-chart-text").textContent = "Hide Chart";
         } else {
             document.querySelector(".button-chart-text").textContent = "Show Chart";
         }
     }
+    document.querySelector('.charts-open').addEventListener('click', () => {
+        document.querySelector('.chart-svg').classList.toggle('rotate')
+    })
   Chart.defaults.font.size = 14;
         Chart.defaults.color = 'rgba(255, 255, 255, 0.5)';
         Chart.defaults.borderColor = 'rgba(255, 255, 255, 0.2)';
@@ -124,7 +131,7 @@ function rendChart(data) {
         title: {
         display: true,
             text: 'AVERAGE:',
-         align: 'start',
+         align: 'center',
       }
     },
             responsive: true,
