@@ -1,14 +1,5 @@
-// Изображения подключать так
-// import imgSource from "./images/arms.jpg"
-// в imgSource находится путь к вашему изображению
-// А СПРАЙТ вот так
-// document.body.insertAdjacentHTML("beforeend", `<svg>
-//         <use href="./sprite.svg#icon-clouds-and-sun"></use>
-//     </svg>`)
 import { rendMore } from '../serg/lib.js'
-
 import daysCard from './daysCard.hbs';
-
 import { initSlider, init } from '../illia/slider';
 
 let isMoreInfo = false;
@@ -29,8 +20,6 @@ const weekDays = {
     'Fri': 'Friday',
     'Sat': 'Saturday',
 };
-
-
 
 weatherListSlider.innerHTML =  
     `<button class="fiveDaysScrollLeft">
@@ -62,17 +51,11 @@ function rendMain(data) {
         weatherList.style.transform = "translateX(0px)";
       } 
 
-
     isMoreInfo = false;
-    // hideMoreInfo.innerHTML = '';
-    // hideMoreInfoSlider.innerHTML = '';
     fivedaysClass.classList.remove('hundred');
     hideMoreInfo.classList.add('none');
     moreInfoContainer.classList.add('none');
     hideMoreInfoSlider.classList.add('none');
-    
-    console.log('Mr_Paul');
-    console.log(data);
 
     function showMoreInfo(e) {
         isMoreInfo = true;
@@ -84,9 +67,7 @@ function rendMain(data) {
             return
         }
         const dayData = data.list[e.target.dataset.id];
-        
         rendMore(JSON.parse(JSON.stringify(dayData)));
-
     }
 
     weatherList.addEventListener('click', showMoreInfo);
@@ -128,7 +109,6 @@ function rendMain(data) {
             this.min = min;
             this.max = max;
             this.id = id;
-
         };
     }
     let id = 0;
@@ -137,17 +117,12 @@ function rendMain(data) {
         const oneDay = new Card(weekDays[dayOnCards[i]], dateOnCards[i], monthOnCards[i], iconOnCard[i], minTempOnCards[i], maxTempOnCards[i], id = i);
         daysArray.push(oneDay);
     }
-
     weatherList.innerHTML = daysCard(daysArray);
 };
 
-
-
 function switchPosition () {
     fivedaysClass.classList.add('hundred');
-
    !isMoreInfo ? document.querySelector('.fivedays').classList.toggle('position') : console.log('ha-ha-ha');
 }
 
 export { rendMain, switchPosition };
-
