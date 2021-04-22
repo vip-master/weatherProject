@@ -78,10 +78,11 @@
 }
 
 .weather-list-container {
-  width: 408px;
+  width: max-content;
   overflow: hidden;
 }
 .weather-list {
+  width: 408px;
   display: flex;
   justify-content: space-between;
 }
@@ -230,6 +231,7 @@
 
   .weather-list {
     justify-content: space-between;
+    width: 585px;
   }
 
   .weather-list-slider {
@@ -265,6 +267,10 @@
 
   .weather {
     position: relative;
+  }
+
+  .weather-list {
+    width: 900px;
   }
 
   .weather-main {
@@ -323,5 +329,9 @@
     font-size: 14px;
     line-height: 17px;
     margin-top: 5px;
+  }
+
+  .hundred {
+    margin-bottom: 100px;
   }
 }
