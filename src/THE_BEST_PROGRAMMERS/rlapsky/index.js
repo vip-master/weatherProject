@@ -73,6 +73,4 @@ function rendFirst(data){
 
 }
  
-
-
 export {rendFirst}
