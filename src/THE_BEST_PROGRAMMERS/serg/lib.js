@@ -2,9 +2,12 @@ import galeru from './galery.hbs';
 
 const rendMore = function (dayData) {
     const button = document.querySelector('.weather-moreInfo-slider')
-
-    button.innerHTML = `<button class="ewcw"><svg class="button_svg" width="10" ">
+    
+    button.innerHTML = `<button class="ewcw_left"><svg class="button_svg" width="10" ">
+    <use href = "./sprite.svg#icon-arrow_to_left" ></use></svg></button>
+    <button class="ewcw_right "><svg class="button_svg " width="10" ">
     <use href = "./sprite.svg#icon-arrow_to_right" ></use></svg></button>`
+
     const more = document.querySelector('.weather-moreInfo')
     if (dayData.length > 7) {
         const opop = dayData.splice(1, 1)
