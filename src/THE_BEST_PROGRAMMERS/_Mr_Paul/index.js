@@ -9,6 +9,7 @@ import { rendMore } from '../serg/lib.js'
 
 import daysCard from './daysCard.hbs';
 
+let isMoreInfo = false;
 const fivedaysClass = document.querySelector('.fivedays');
 const weatherList = document.querySelector('.weather-list');
 const weatherTitle = document.querySelector(".weather-title");
@@ -39,6 +40,7 @@ weatherListSlider.insertAdjacentHTML('beforeend',
     </button>`);
 
 function rendMain(data) {
+    isMoreInfo = false;
     hideMoreInfo.innerHTML = '';
     hideMoreInfoSlider.innerHTML = '';
     hideMoreInfo.classList.add('none');
@@ -46,6 +48,7 @@ function rendMain(data) {
     console.log(data);
 
     function showMoreInfo(e) {
+        isMoreInfo = true;
         fivedaysClass.classList.remove('position');
         hideMoreInfo.classList.remove('none');
         if (e.target.textContent !== 'more info') {
@@ -109,8 +112,13 @@ function rendMain(data) {
     weatherList.innerHTML = daysCard(daysArray);
 };
 
+function switchPosition () {
+   !isMoreInfo ? document.querySelector('.fivedays').classList.toggle('position') : console.log('ha-ha-ha');;
+   
+    
+}
 
-export { rendMain };
+export { rendMain, switchPosition };
 
 // import markup from './markup.hbs';
 
