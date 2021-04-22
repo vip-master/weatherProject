@@ -3,7 +3,7 @@ import galeru from './galery.hbs';
 const rendMore = function (dayData) {
         const button = document.querySelector('.weather-moreInfo-slider')
    
-    button.innerHTML = `<button class="ewcw"><svg class="button_svg" width="17" height="18">
+    button.innerHTML = `<button class="ewcw"><svg class="button_svg" width="10">
     <use href = "./sprite.svg#icon-arrow_to_right" ></use></svg></button>`
     const more = document.querySelector('.weather-moreInfo')
     if(dayData.length > 7) {
