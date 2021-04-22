@@ -19,13 +19,29 @@ const initSlider = function({ container, list, prevButton, nextButton, step, isH
         conWidth = Number.parseInt(getComputedStyle(container).width)
     }
 
+    const setBut = (b) => {
+        if (b) {
+            b.removeAttribute("style")
+        }
+    }
+    const hideBut = (b) => {
+        if (b) {
+            b.style.visibility = "hidden"
+            b.style.pointerEvents = "none"
+        }
+    }
+
     const hide = () => {
 
-        if (onEnd) prevButton.style.display = "none"
-        else if (onStart) nextButton.style.display = "none"
-        else {
-            if (prevButton) prevButton.style.display = "block"
-            if (nextButton) nextButton.style.display = "block"
+        if (onEnd) {
+            hideBut(nextButton)
+            setBut(prevButton)
+        } else if (onStart) {
+            hideBut(prevButton)
+            setBut(nextButton)
+        } else {
+            setBut(prevButton)
+            setBut(nextButton)
         }
     }
 
@@ -35,39 +51,38 @@ const initSlider = function({ container, list, prevButton, nextButton, step, isH
 
     const next = () => {
         compute()
-        if (isHide) hide()
         currentPos += step;
         if (width - currentPos < conWidth) {
             currentPos = Math.abs(conWidth - width)
             onEnd = true
         } else onEnd = false
         setPos(currentPos)
+        onStart = false
+        if (isHide) hide()
+
     }
 
     const prev = () => {
         compute()
-        if (isHide) hide()
         currentPos -= step;
         if (currentPos < 0) {
             currentPos = 0
             onStart = true
-        } else onstart = false
+        } else onStart = false
         setPos(currentPos)
+        onEnd = false
+        if (isHide) hide()
     }
 
-    const init = () => {
-        console.log("init");
-        if (h) {
-            b1.style.display = "flex"
-            b2.style.display = "flex"
-        } else {
-            b1.style.display = "inline-block"
-            b2.style.display = "inline-block"
-        }
-        list.style.transform = `none`
+    const init = (s) => {
+        if (Number.isInteger(s)) step = s
+        setBut(b1)
+        setBut(b2)
+        list.style.transform = `translateX(0px)`
     }
 
     // _____
+    if (isHide) hide()
     if (prevButton) prevButton.addEventListener("click", prev)
     if (nextButton) nextButton.addEventListener("click", next)
     arrInit.push(init)
