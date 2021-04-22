@@ -31,6 +31,7 @@ const weekDays = {
 };
 
 
+
 weatherListSlider.innerHTML =  
     `<button class="fiveDaysScrollLeft">
         <svg class="five-days-arrow">
@@ -43,10 +44,18 @@ weatherListSlider.innerHTML =
         </svg>
     </button>`;
 
-    // initSlider();
+    const obj = {
+        container: document.querySelector('.weather-list-container'),
+        list: document.querySelector('.weather-list'),
+        prevButton: document.querySelector('.fiveDaysScrollLeft'),
+        nextButton: document.querySelector('.fiveDaysScrollRight'),
+        step: 30,
+    };
+
+    initSlider(obj);
 
 function rendMain(data) {
-    // init();
+    init();
 
     isMoreInfo = false;
     // hideMoreInfo.innerHTML = '';
