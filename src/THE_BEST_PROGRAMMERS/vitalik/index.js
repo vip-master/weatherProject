@@ -55,7 +55,7 @@ function rendChart(data) {
         </div>
     </button>`;
     
-   document.querySelector('.charts-canvas').classList.add('none')
+   document.querySelector('.charts-continer').classList.add('none')
     console.log(buttonChart);
     const onButtomChartClick = document.querySelector('.button-chart-close');
     onButtomChartClick.addEventListener('click', buttonChartRemove);
@@ -63,7 +63,7 @@ function rendChart(data) {
     function buttonChartRemove() {
         
         // document.querySelector('.charts').classList.toggle('compress');
-        document.querySelector('.charts-canvas').classList.toggle('none');
+        document.querySelector('.charts-continer').classList.toggle('none');
        
         switchPosition();
         if (document.querySelector(".button-chart-text").textContent === "Show Chart") {
@@ -73,7 +73,8 @@ function rendChart(data) {
         }
     }
     document.querySelector('.charts-open').addEventListener('click', () => {
-        document.querySelector('.chart-svg').classList.toggle('rotate')
+        document.querySelector('.chart-svg').classList.toggle('rotate');
+       document.querySelector('.charts-open').classList.toggle('grafic-canvas')
     })
   Chart.defaults.font.size = 14;
         Chart.defaults.color = 'rgba(255, 255, 255, 0.5)';
