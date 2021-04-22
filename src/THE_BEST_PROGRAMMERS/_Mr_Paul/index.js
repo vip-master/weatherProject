@@ -126,7 +126,7 @@ function rendMain(data) {
 };
 
 function switchPosition () {
-    fivedaysClass.classList.add('hundred');
+    fivedaysClass.classList.toggle('hundred');
 
    !isMoreInfo ? document.querySelector('.fivedays').classList.toggle('position') : console.log('ha-ha-ha');
 }
