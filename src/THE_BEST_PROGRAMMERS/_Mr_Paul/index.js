@@ -17,6 +17,7 @@ const weatherTitleMobile = document.querySelector(".weather-main .weather-title"
 const weatherListSlider = document.querySelector(".weather-list-slider");
 const hideMoreInfo = document.querySelector(".weather-moreInfo");
 const hideMoreInfoSlider = document.querySelector(".weather-moreInfo-slider");
+const moreInfoContainer = document.querySelector('.weather-moreInfo-container');
 const weekDays = {
     'Sun': 'Sunday',
     'Mon': 'Monday',
@@ -43,9 +44,11 @@ function rendMain(data) {
     isMoreInfo = false;
     hideMoreInfo.innerHTML = '';
     hideMoreInfoSlider.innerHTML = '';
+    fivedaysClass.classList.remove('hundred');
     hideMoreInfo.classList.add('none');
-    document.querySelector('.weather-moreInfo-container').classList.add('none');
-    document.querySelector('.weather-moreInfo-slider').classList.add('none');
+    moreInfoContainer.classList.add('none');
+    hideMoreInfoSlider.classList.add('none');
+    
     console.log('Mr_Paul');
     console.log(data);
 
@@ -53,8 +56,8 @@ function rendMain(data) {
         isMoreInfo = true;
         fivedaysClass.classList.remove('position');
         hideMoreInfo.classList.remove('none');
-        document.querySelector('.weather-moreInfo-container').classList.remove('none');
-        document.querySelector('.weather-moreInfo-slider').classList.remove('none');
+        moreInfoContainer.classList.remove('none');
+        hideMoreInfoSlider.classList.remove('none');
         if(e.target.textContent !== 'more info') {
             return
         }
@@ -123,7 +126,9 @@ function rendMain(data) {
 };
 
 function switchPosition () {
-   !isMoreInfo ? document.querySelector('.fivedays').classList.toggle('position') : console.log('ha-ha-ha');;
+    fivedaysClass.classList.add('hundred');
+
+   !isMoreInfo ? document.querySelector('.fivedays').classList.toggle('position') : console.log('ha-ha-ha');
 }
 
 export { rendMain, switchPosition };
