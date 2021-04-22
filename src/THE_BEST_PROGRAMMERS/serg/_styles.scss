@@ -18,8 +18,7 @@
 
 .weather-moreInfo {
   display: flex;
-  overflow: hidden;
-
+  min-width: max-content;
   @media (max-width: 479px) {
     justify-content: start;
     .container {
@@ -189,6 +188,7 @@
   }
 }
 .weather-moreInfo-container {
+  overflow: hidden;
   margin-bottom: 20px;
   @media (min-width: $mobile) {
     margin-bottom: 20px;
