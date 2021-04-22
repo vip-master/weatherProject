@@ -12,12 +12,12 @@ const itit = {
     list: document.querySelector('.weather-moreInfo'),
     prevButton:document.querySelector('.ewcw_left'),
     nextButton:document.querySelector('.ewcw_right'),
-    step: 20,
+    step: 320,
     isHide: true,
 }
-initSlider(itit)
+const hf = initSlider(itit)
 const rendMore = function (dayData) {
-    init()
+    init(hf,100)
 
     const more = document.querySelector('.weather-moreInfo')
     if (dayData.length > 7) {
