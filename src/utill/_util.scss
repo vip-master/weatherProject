@@ -71,15 +71,15 @@ body {
     .container {
         padding: 0 20px 0 20px;
     }
+    .unmove-big {
+        transform: translateX(0px) !important;
+    }
 }
 
 @media (min-width:$tablet) {
     .container {
         max-width: $tablet;
         padding: 0 74px 0 74px;
-    }
-    .unmove-big {
-        transform: translateX(0px) !important;
     }
 }
 
