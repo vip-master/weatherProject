@@ -11,14 +11,13 @@
       padding: 0 20px 0 20px;
     }
   }
-  // padding-left: 15px;
 }
 .without-jc {
   justify-content: center;
 }
+
 .weather-moreInfo {
   display: flex;
-  margin-bottom: 49px;
   overflow: hidden;
 
   @media (max-width: 479px) {
@@ -28,16 +27,12 @@
     }
   }
   @media (min-width: $tablet) {
-    margin-top: 40px;
-    margin-bottom: 30px;
     .container {
       max-width: $tablet;
       padding: 0 74px 0 74px;
     }
   }
   @media (min-width: $desktop) {
-    margin-bottom: 0px;
-    margin-top: 40px;
     justify-content: center;
 
     .container {
@@ -56,6 +51,9 @@
 }
 .border {
   border: 2px solid rgba(255, 255, 255, 0.2);
+}
+.galery_item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 .galery_item {
   padding-top: 15px;
@@ -88,16 +86,10 @@
   @media (min-width: $tablet) {
     padding-right: 19px;
     padding-left: 19px;
-
-    // .container {
-    //   max-width: $tablet;
-    //   padding: 0 74px 0 74px;
-    // }
   }
 
   @media (min-width: $desktop) {
     justify-content: center;
-    // width: 1060px;
     .container {
       max-width: $desktop;
       padding: 0 110px 0 110px;
@@ -141,7 +133,6 @@
 }
 .ewcw {
   display: none;
-  display: flex;
   align-items: center;
   justify-content: center;
   width: 30px;
@@ -150,13 +141,12 @@
   background: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(0, 0, 0, 0.1);
   @media (min-width: $mobile) {
-    // display: none;
     .container {
       padding: 0 20px 0 20px;
     }
   }
   @media (min-width: $tablet) {
-    // justify-content: center;
+    display: flex;
     .container {
       max-width: $tablet;
       padding: 0 74px 0 74px;
@@ -176,10 +166,13 @@
   stroke: #ffffff;
 }
 .weather-moreInfo-slider {
-  margin-right: 30px;
-  display: none;
+  max-width: 100%;
+  height: 0px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
   justify-content: flex-end;
+  margin-bottom: 20px;
   @media (min-width: $tablet) {
+    border: 0px;
     display: flex;
     .container {
       max-width: $tablet;
@@ -196,7 +189,9 @@
   }
 }
 .weather-moreInfo-container {
+  margin-bottom: 20px;
   @media (min-width: $mobile) {
+    margin-bottom: 20px;
     justify-content: start;
     .container {
       padding: 0 20px 0 20px;
@@ -205,6 +200,8 @@
   @media (min-width: $tablet) {
     padding-left: 0px;
     padding-right: 0px;
+    margin-top: 40px;
+    margin-bottom: 30px;
     .container {
       max-width: $tablet;
       padding: 0 74px 0 74px;
@@ -212,6 +209,7 @@
   }
   @media (min-width: $desktop) {
     margin-bottom: 0px;
+    margin-top: 40px;
 
     .container {
       max-width: $desktop;
