@@ -1,5 +1,12 @@
+let b1
+let b2
+let h
+
 const initSlider = function({ container, list, prevButton, nextButton, step, isHide = false }) {
     if (!container || !list || !step) throw new Error("Ти неправильно вказав опції для слайдера")
+    b1 = prevButton
+    b2 = nextButton
+    h = isHide
     let width = Number.parseInt(getComputedStyle(list).width)
     let conWidth = Number.parseInt(getComputedStyle(container).width)
     list.style.transitionDuration = ".5s"
@@ -19,8 +26,8 @@ const initSlider = function({ container, list, prevButton, nextButton, step, isH
         if (onEnd) prevButton.style.display = "none"
         else if (onStart) nextButton.style.display = "none"
         else {
-            prevButton.style.display = "block"
-            nextButton.style.display = "block"
+            if (prevButton) prevButton.style.display = "block"
+            if (nextButton) nextButton.style.display = "block"
         }
     }
 
@@ -55,4 +62,14 @@ const initSlider = function({ container, list, prevButton, nextButton, step, isH
     if (nextButton) nextButton.addEventListener("click", next)
 }
 
-export { initSlider }
+const init = () => {
+    if (h) {
+        b1.style.display = "flex"
+        b2.style.display = "flex"
+    } else {
+        b1.style.display = "inline-block"
+        b2.style.display = "inline-block"
+    }
+}
+
+export { initSlider, init }
