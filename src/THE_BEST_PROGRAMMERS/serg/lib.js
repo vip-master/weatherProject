@@ -7,8 +7,11 @@ import { initSlider, init } from '../illia/slider.js';
     <use href = "./sprite.svg#icon-arrow_to_left" ></use></svg></button>
     <button class="ewcw_right "><svg class="button_svg " width="10" ">
     <use href = "./sprite.svg#icon-arrow_to_right" ></use></svg></button>`;
-
-const rendMore = function (dayData) {
+    const itit ={
+    container:document.querySelector('.weather-moreInfo-container'),
+    list:document.querySelector('.weather-moreInfo')
+    }
+    const rendMore = function (dayData) {
     
     const more = document.querySelector('.weather-moreInfo')
     if (dayData.length > 7) {
