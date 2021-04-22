@@ -49,13 +49,19 @@ weatherListSlider.innerHTML =
         list: document.querySelector('.weather-list'),
         prevButton: document.querySelector('.fiveDaysScrollLeft'),
         nextButton: document.querySelector('.fiveDaysScrollRight'),
-        step: 30,
+        step: 85,
     };
 
-    initSlider(obj);
+    const sliderIndex = initSlider(obj);
 
 function rendMain(data) {
-    init();
+    init(sliderIndex, getComputedStyle(weatherList).width);
+
+    if (window.screen.width > 480) {
+        console.log('hey');
+        weatherList.style.transform = "translateX(0px)";
+      } 
+
 
     isMoreInfo = false;
     // hideMoreInfo.innerHTML = '';
@@ -84,12 +90,6 @@ function rendMain(data) {
     }
 
     weatherList.addEventListener('click', showMoreInfo);
-
-    function mobileSlider() {
-        console.log(document.querySelector('.weather-list-container'));
-        document.querySelector('.weather-list-container').scrollLeft -= 20;
-    }
-    document.querySelector('.fiveDaysScrollRight').addEventListener('click', mobileSlider);
 
     const weatherTitleCity = data.city.name + ', ' + data.city.country;
     weatherTitle.innerHTML = weatherTitleCity;
@@ -141,6 +141,8 @@ function rendMain(data) {
     weatherList.innerHTML = daysCard(daysArray);
 };
 
+
+
 function switchPosition () {
     fivedaysClass.classList.add('hundred');
 
@@ -149,108 +151,3 @@ function switchPosition () {
 
 export { rendMain, switchPosition };
 
-// import markup from './markup.hbs';
-
-// const test = document.querySelector('.test')
-
-//     const moreInfoArray = splitArrayIntoChunks (data.list, 8);
-//     console.log(moreInfoArray);
-
-//     const dayOnCards = [];
-//     const dateOnCards = [];
-//     const monthOnCards = [];
-    
-//     for(let i = 0; i < data.list.length; i +=8) {
-
-//       const weekDayNumber = new Date(data.list[i].dt * 1000).getDay();
-//       const weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-//       dayOnCards.push(weekDays[weekDayNumber]);        
-          
-//       const dateNumber = new Date(data.list[i].dt * 1000).getDate();
-//       dateOnCards.push(dateNumber)
-        
-//       const monthNumber = new Date(data.list[i].dt * 1000).getMonth();
-//       const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul","Aug", "Sep", "Oct", "Nov", "Dec"];
-//       monthOnCards.push(months[monthNumber])
-        
-//     };
-    
-//     class Card {
-//       constructor(day, date, month) {
-//         this.day = day;
-//         this.date = date;
-//         this.month = month;
-//       };
-//     }
-
-//       const daysArray = [];
-//       for(let i = 0; i < dayOnCards.length; i +=1) {
-//         const oneDay = new Card(dayOnCards[i], dateOnCards[i], monthOnCards[i]);
-//         daysArray.push(oneDay);
-//       }
-//       console.log(daysArray);
-
-//     // const daysArray = numbers.reduce((acc, value) => acc + value, 0);
-
-
-//     test.innerHTML = markup(daysArray);
-    
-    
-//   });
-// };
-// rendMain();
-
-
-
-// import api from './api.js';
-
-// import daysCard from './daysCard.hbs';
-// import api from './api.js';
-
-// const test = document.querySelector('.weather-moreInfo');
-
-
-
-
-// fetch(
-//     `https://api.openweathermap.org/data/2.5/forecast?q=London&units=metric&appid=939eab3895e9f452425ca7e40505d9c8`,
-//   ).then(res => res.json())
-//   .then(data => {
-//     console.log(data);
-//     test.innerHTML = daysCard(data);
-//     const dayOnCards = [];
-//     const dateOnCards = [];
-//     const monthOnCards = [];
-
-//     for(let i = 0; i < data.list.length; i +=8) {
-
-//       const weekDayNumber = new Date(data.list[i].dt * 1000).getDay();
-//       const weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-//       dayOnCards.push(weekDays[weekDayNumber]);        
-
-//       const dateNumber = new Date(data.list[i].dt * 1000).getDate();
-//       dateOnCards.push(dateNumber)
-
-
-//       const monthNumber = new Date(data.list[i].dt * 1000).getMonth();
-//       const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul","Aug", "Sep", "Oct", "Nov", "Dec"];
-//       monthOnCards.push(months[monthNumber])
-
-//     };
-
-//     console.log(dayOnCards);
-//     console.log(dateOnCards);
-//     console.log(monthOnCards);
-
-
-//     const temeprature = [];
-//     for(let i = 0; i < 8; i += 1) {
-//       temeprature.push(Math.round(data.list[i].main.temp));
-//     }
-
-//     const min = Math.min( ...temeprature );
-//     const max = Math.max( ...temeprature );
-//     console.log(min);
-//     console.log(max);
-
-//   });
