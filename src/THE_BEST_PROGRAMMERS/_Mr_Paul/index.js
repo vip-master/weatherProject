@@ -26,7 +26,7 @@ const weekDays = {
     'Sat': 'Saturday',
 };
 
-weatherListSlider.insertAdjacentHTML('beforeend', 
+weatherListSlider.insertAdjacentHTML('beforeend',
     `<button class="fiveDaysScrollLeft">
         <svg class="five-days-arrow">
             <use href="./sprite.svg#icon-arrow_to_left"></use>
@@ -48,11 +48,11 @@ function rendMain(data) {
     function showMoreInfo(e) {
         fivedaysClass.classList.remove('position');
         hideMoreInfo.classList.remove('none');
-        if(e.target.textContent !== 'more info') {
+        if (e.target.textContent !== 'more info') {
             return
         }
         const dayData = data.list[e.target.dataset.id];
-        
+
         rendMore(JSON.parse(JSON.stringify(dayData)));
 
     }
@@ -81,11 +81,11 @@ function rendMain(data) {
         const oneDayTempMax = [];
         for (let i = 0; i < el.length; i++) {
             oneDayTempMin.push(el[i].main.temp_min)
-            oneDayTempMax.push(el[i].main.temp_max)  
+            oneDayTempMax.push(el[i].main.temp_max)
         }
-        minTempOnCards.push(Math.round(Math.min( ...oneDayTempMin)));
-        maxTempOnCards.push(Math.round(Math.max( ...oneDayTempMax)));
-    }); 
+        minTempOnCards.push(Math.round(Math.min(...oneDayTempMin)));
+        maxTempOnCards.push(Math.round(Math.max(...oneDayTempMax)));
+    });
 
     class Card {
         constructor(day, date, month, icon, min, max, id) {
@@ -101,7 +101,7 @@ function rendMain(data) {
     }
     let id = 0;
     const daysArray = [];
-    for(let i = 0; i < dayOnCards.length; i +=1) {
+    for (let i = 0; i < dayOnCards.length; i += 1) {
         const oneDay = new Card(weekDays[dayOnCards[i]], dateOnCards[i], monthOnCards[i], iconOnCard[i], minTempOnCards[i], maxTempOnCards[i], id = i);
         daysArray.push(oneDay);
     }
@@ -122,22 +122,22 @@ export { rendMain };
 //     const dayOnCards = [];
 //     const dateOnCards = [];
 //     const monthOnCards = [];
-    
+
 //     for(let i = 0; i < data.list.length; i +=8) {
 
 //       const weekDayNumber = new Date(data.list[i].dt * 1000).getDay();
 //       const weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 //       dayOnCards.push(weekDays[weekDayNumber]);        
-          
+
 //       const dateNumber = new Date(data.list[i].dt * 1000).getDate();
 //       dateOnCards.push(dateNumber)
-        
+
 //       const monthNumber = new Date(data.list[i].dt * 1000).getMonth();
 //       const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul","Aug", "Sep", "Oct", "Nov", "Dec"];
 //       monthOnCards.push(months[monthNumber])
-        
+
 //     };
-    
+
 //     class Card {
 //       constructor(day, date, month) {
 //         this.day = day;
@@ -157,8 +157,8 @@ export { rendMain };
 
 
 //     test.innerHTML = markup(daysArray);
-    
-    
+
+
 //   });
 // };
 // rendMain();
