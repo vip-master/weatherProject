@@ -78,11 +78,23 @@ body {
         max-width: $tablet;
         padding: 0 74px 0 74px;
     }
+    .unmove-big {
+        transform: translateX(0px) !important;
+    }
 }
 
 @media (min-width:$desktop) {
     .container {
         max-width: $desktop;
         padding: 0 110px 0 110px;
+    }
+    .unmove-small {
+        transform: translateX(0px) !important;
+    }
+}
+
+@media (max-width:$tablet) {
+    .unmove-small {
+        transform: translateX(0px) !important;
     }
 }
