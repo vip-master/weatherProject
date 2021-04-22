@@ -22,6 +22,8 @@
   overflow: hidden;
 
   @media (max-width: 479px) {
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
     justify-content: start;
     .container {
       padding: 0 20px 0 20px;
@@ -29,6 +31,8 @@
   }
   @media (min-width: $tablet) {
     margin-top: 40px;
+    padding-bottom: 0px;
+    border-bottom: 0px;
     margin-bottom: 30px;
     .container {
       max-width: $tablet;
@@ -198,11 +202,13 @@
 .weather-moreInfo-container {
   @media (min-width: $mobile) {
     justify-content: start;
+    margin-bottom: 29px;
     .container {
       padding: 0 20px 0 20px;
     }
   }
   @media (min-width: $tablet) {
+    margin-bottom: 0px;
     padding-left: 0px;
     padding-right: 0px;
     .container {
