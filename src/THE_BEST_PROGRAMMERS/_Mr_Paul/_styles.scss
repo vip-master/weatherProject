@@ -9,6 +9,10 @@
   margin-top: 60px;
 }
 
+.weather {
+  margin-bottom: 20px;
+}
+
 .fiveDaysScrollLeft {
   top: 8px;
   right: 8px;
@@ -159,7 +163,6 @@
     justify-content: center;
   }
 }
-
 
 @media (min-width: $tablet) {
   .fivedays {
