@@ -12,15 +12,14 @@ import Chart from 'chart.js/auto';
 import { switchPosition } from '../_Mr_Paul/index';
 let newChart 
 function rendChart(data) {
-    console.log('vitalik')
-    console.log(data);
+
     if (newChart) {
      newChart.destroy()
  }
     const grafikTemperature = data.map(temperature => {
         return temperature[0]
     })
-    console.log(grafikTemperature);
+ 
     const temp = [];
     const humidity = [];
     const windSpeed = [];
@@ -46,7 +45,7 @@ function rendChart(data) {
     }
    
     y[4]=' '
-  console.log(y);
+
 
     const buttonChart = document.querySelector('.charts-open');
     buttonChart.innerHTML =
@@ -59,7 +58,7 @@ function rendChart(data) {
     </button>`;
     
    document.querySelector('.charts-continer').classList.add('none')
-    console.log(buttonChart);
+
     const onButtomChartClick = document.querySelector('.button-chart-close');
     onButtomChartClick.addEventListener('click', buttonChartRemove);
 
@@ -173,66 +172,4 @@ newChart =   new Chart(document.getElementById("charts-line"), {
 
 
 export { rendChart };
-
-
-    // options: {
-     
-    //         // responsive: true,
-    //         // maintainAspectRatio: true,
-    //         scales: {
-    //             y: {
-    //                 // display: true,
-    //                 // title: {
-    //                 //     display: true,
-    //                 //     text:'Value of Indicators',
-    //                 //     color: 'rgba(255, 255, 255, 0.5)',
-    //                 //     font:{
-    //                 //         family: 'Lato',
-    //                 //         size: 12,
-    //                 //         weight: 400,
-    //                 //     },
-    //                 //     padding:{bottom:10}
-    //                 // },
-    //                 stacked: true,
-    //                 beginAtZero: false,
-    //                 gridLines: {
-    //                     display: true,
-    //                     color: "rgba(255,99,132,0.2)",
-    //                 }
-    //             },
-                
-    //         x: {
-    //             gridLines: {
-    //                 display: false,
-    //             }
-    //         }
-    //         },
-    //         plugins:{
-    //             legend:{
-    //                 position: 'top',
-    //                 align: 'center',
-    
-    //                 labels: {
-    //                     color: 'rgba(255, 255, 255, 0.5)',
-    //                     boxWidth: 10,
-    //                     boxHeight:10,
-    //                     },
-    //             },
-    //             title:{
-    //                 display: true,
-    //                 text: 'AVERAGE:',
-    //                 color: 'rgba(255, 255, 255, 0.5)',
-    //                 align: 'start',
-    //                 font: {
-    //                     size: 12,
-    //                     family: "Lato",
-    //                     weight: 400,
-    //                     },
-    //             },
-    //         },
-    //     }
-        
-    // });
-
-
 
