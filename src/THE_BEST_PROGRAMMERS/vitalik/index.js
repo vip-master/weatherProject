@@ -52,7 +52,7 @@ function rendChart(data) {
         ` <button class="button-chart-close"><span class="button-chart-text">Show Chart</span>
         <div class="chart-svg-box">
             <svg class="chart-svg" >
-                <use href="./sprite.svg#icon-arrow_to_up"></use>
+                <use href="./sprite.svg#icon-arrow_to_down"></use>
             </svg>
         </div>
     </button>`;
