@@ -30,7 +30,7 @@ const rendMore = function (dayData) {
         more.classList.remove('with-jc');
     }
 
-    console.log(dayData);
+   
     const pepo = dayData.splice(7)
 
     const ret = dayData.map(e => {

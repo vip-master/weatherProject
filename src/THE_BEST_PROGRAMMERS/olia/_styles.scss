@@ -159,27 +159,15 @@ color: rgba(255, 255, 255, 1);
 
 }
 
-// .header-slide{
-// position: absolute;
-// width: 28px;
-// height: 28px;
-// padding: 11px 12px;
-// top: 93px;
-// margin-left: 250px;
-// border-radius: 50%;
-// background-color: red;
-
-// border: none;
-// cursor: pointer;
-// @media (min-width:$tablet) {
-//   top: 120px;
-//   margin-left: 450px;
-// }
-// @media (min-width:$desktop) {
-//   top: 138px;
-//   margin-left: 720px;
-// }
-// }
+.header-close{
+  stroke: rgba(255, 255, 255, 0.5);
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 9px;
+  right: 12px; 
+  
+}
 .header-arrow{
 fill: none;
 stroke: rgba(0, 0, 0, 1);
