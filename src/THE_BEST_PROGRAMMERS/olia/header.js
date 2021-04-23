@@ -63,7 +63,6 @@ function formSubmit(cityPosition) {
                 el.weather[0].icon = icons[el.weather[0].icon]
                 el.dt = (new Date((+el.dt) * 1000)).toString()
             })
-            console.log(allData);
             render(allData)
         });
 
