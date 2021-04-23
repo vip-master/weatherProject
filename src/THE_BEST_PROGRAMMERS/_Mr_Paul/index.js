@@ -41,15 +41,20 @@ weatherListSlider.innerHTML =
         step: 85,
     };
 
+    function cleanCurrent() {
+        document.querySelectorAll(".more_info_btn").forEach(element => {
+            element.classList.remove('currentMoreInfoBtn');
+        });
+        
+        document.querySelectorAll(".days_list_item_day").forEach(element => {
+            element.classList.remove('currentCity');
+        });
+    }
+
     const sliderIndex = initSlider(obj);
 
 function rendMain(data) {
-    init(sliderIndex, getComputedStyle(weatherList).width);
-
-    if (window.screen.width > 480) {
-        console.log('hey');
-        weatherList.style.transform = "translateX(0px)";
-      } 
+    init(sliderIndex, getComputedStyle(weatherList).width); 
 
     isMoreInfo = false;
     fivedaysClass.classList.remove('hundred');
@@ -57,7 +62,10 @@ function rendMain(data) {
     moreInfoContainer.classList.add('none');
     hideMoreInfoSlider.classList.add('none');
 
+    cleanCurrent()
+
     function showMoreInfo(e) {
+        cleanCurrent();
         isMoreInfo = true;
         fivedaysClass.classList.remove('position');
         hideMoreInfo.classList.remove('none');
@@ -68,6 +76,13 @@ function rendMain(data) {
         }
         const dayData = data.list[e.target.dataset.id];
         rendMore(JSON.parse(JSON.stringify(dayData)));
+        e.target.classList.add('currentMoreInfoBtn');
+
+        const someArray = document.querySelectorAll(".days_list_item_day");
+        for (let i = 0; i < someArray.length; i++) {
+            someArray[e.target.dataset.id].classList.add('currentCity')
+            
+        }
     }
 
     weatherList.addEventListener('click', showMoreInfo);
@@ -122,7 +137,7 @@ function rendMain(data) {
 
 function switchPosition () {
     fivedaysClass.classList.add('hundred');
-   !isMoreInfo ? document.querySelector('.fivedays').classList.toggle('position') : console.log('ha-ha-ha');
+   !isMoreInfo ? document.querySelector('.fivedays').classList.toggle('position') : "";
 }
 
 export { rendMain, switchPosition };
