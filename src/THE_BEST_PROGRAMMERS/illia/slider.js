@@ -7,7 +7,6 @@ const initSlider = function({ container, list, prevButton, nextButton, step, isH
     let h = isHide
     let width = Number.parseInt(getComputedStyle(list).width)
     let conWidth = Number.parseInt(getComputedStyle(container).width)
-    list.style.transitionDuration = ".5s"
     let onStart = true
     let onEnd = false
 

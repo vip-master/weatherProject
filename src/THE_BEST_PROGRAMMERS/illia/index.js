@@ -26,6 +26,8 @@ let showToday = true
 
 let lastData = null
 
+let open = false
+
 const openToday = (data) => {
     document.querySelector(".fivedays").classList.add("compress")
     document.querySelector(".weather").classList.add("compress")
@@ -81,9 +83,14 @@ const toggle = (data) => {
 }
 
 const render = function(allData) {
+    if (!open) {
+        document.querySelector(".firstpage-up").classList.remove("none")
+        document.querySelector(".firstpage-down").classList.remove("none")
+        document.querySelector(".fivedays").classList.remove("none")
+        open = true
+    }
     lastData = allData
     allData.list = magic(allData.list)
-    console.log("render");
     toggle(allData)
 
 
