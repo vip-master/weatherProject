@@ -27,7 +27,7 @@
     }
   }
   @media (min-width: $tablet) {
-    padding-bottom:0px;
+    padding-bottom: 0px;
     .container {
       max-width: $tablet;
       padding: 0 74px 0 74px;
@@ -132,7 +132,7 @@
 .peshka {
   margin: 0px;
 }
-.ewcw_right{
+.ewcw_right {
   display: none;
   align-items: center;
   justify-content: center;
@@ -204,7 +204,7 @@
   justify-content: space-between;
   @media (min-width: $tablet) {
     display: flex;
-        margin-bottom: 12px;
+    margin-bottom: 12px;
     .container {
       max-width: $tablet;
       padding: 0 74px 0 74px;
@@ -224,15 +224,13 @@
   margin-bottom: 29px;
   overflow-x: scroll;
   &::-webkit-scrollbar {
-        //  display: block;
-         height: 2px;
-        background-color: rgba(255, 255, 255, 0.2);
-  };
-   &::-webkit-scrollbar-thumb {
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  &::-webkit-scrollbar-thumb {
     background-color: $accent;
+  }
 
-}
-  
   @media (min-width: $mobile) {
     justify-content: start;
     .container {
