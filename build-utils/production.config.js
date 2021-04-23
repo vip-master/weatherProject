@@ -31,6 +31,7 @@ module.exports = (env) => ({
                 removeStyleLinkTypeAttributes: true,
                 useShortDoctype: true,
             },
+            favicon: "favicon.ico",
         }),
         new MiniCssExtractPlugin({
             filename: "style.css",
