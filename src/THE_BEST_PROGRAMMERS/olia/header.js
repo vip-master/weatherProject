@@ -6,6 +6,7 @@ const inputHeader = document.querySelector('.header-input')
 const cityList = document.querySelector('.header-list')
 const headerform = document.querySelector('.header-form')
 const divHeader = document.querySelector('.header-slider')
+const divHeaderClose = document.querySelector('.heder-div-close')
 
 formSubmit()
 headerform.addEventListener('submit', e => {
@@ -13,6 +14,8 @@ headerform.addEventListener('submit', e => {
     formSubmit()
 })
 cityList.addEventListener('click', checkClick)
+
+
 const icons = {
     '01d': 'icon-sun',
     '01n': 'icon-sun',
@@ -100,9 +103,11 @@ function saveCity() {
 function createFavoritCity(newCity) {
     let liEl = `<li class="header-item">
 <button class="header-btn"><span class="header-text">${newCity}</span>
+<div class="heder-div-close">
 <svg class="header-close">
 <use href="sprite.svg#icon-cross"></use>
 </svg>
+</div>
 </button>
 </li>`
     cityList.insertAdjacentHTML('beforeend', liEl)
@@ -118,11 +123,18 @@ if (localStorage.getItem('city') !== null) {
 //________________________________________________________________
 
 function checkClick(e) {
-    console.dir(e)
-    if (e.target.nodeName === 'svg') {
+    if (e.target.nodeName === 'DIV') {
         e.path[2].remove()
         localStorage.removeItem('city')
     }
+    if (e.target.nodeName === 'svg') {
+          e.path[3].remove()
+          localStorage.removeItem('city')
+      }
+      if (e.target.nodeName === 'use') {
+          e.path[4].remove()
+          localStorage.removeItem('city')
+      }
     renderCityWeather(e)
 }
 

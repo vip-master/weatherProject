@@ -1,4 +1,18 @@
 
+.heder-div-close{
+height: 100%;
+width: 15px;
+position: absolute;
+top: 0px;
+right: 11px;
+padding-top: 5px; 
+z-index: 2;
+}
+.header-close{
+  stroke: rgba(255, 255, 255, 0.5);
+  width: 10px;
+  height: 10px;
+}
 .header-form{
   width: 100%;
   padding-top: 30px;
@@ -144,15 +158,7 @@ color: rgba(255, 255, 255, 1);
 }
 
 }
-.header-close{
-  stroke: rgba(255, 255, 255, 0.5);
-  width: 10px;
-  height: 10px;
-  position: absolute;
-  top: 9px;
-  right: 12px; 
-  
-}
+
 .header-arrow{
 fill: none;
 stroke: rgba(0, 0, 0, 1);
