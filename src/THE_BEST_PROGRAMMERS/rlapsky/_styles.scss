@@ -222,6 +222,9 @@
     }
     body {
     background-image:url(../THE_BEST_PROGRAMMERS/rlapsky/images/city.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
     }
     .current {
         background:#FFF;
