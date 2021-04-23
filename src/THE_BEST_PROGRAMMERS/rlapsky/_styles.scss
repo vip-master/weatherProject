@@ -207,10 +207,9 @@
     text-align:center;
     text-transform:uppercase;
     }
-    .weather-toggle-btn1:focus,
-    .weather-toggle-btn1:focus,
     .weather-toggle-btn2:hover,
-     .weather-toggle-btn1:hover{
+    .weather-toggle-btn1:hover{
+        transition: all 0.3s ease;
         background-color: #fff;
     }
     .weather-toggle-btn2 {
