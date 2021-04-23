@@ -44,6 +44,11 @@ $desktop:1280px;
     overflow: hidden;
 }
 
+div {
+    animation-name: opacity;
+    animation-duration: .5s;
+}
+
 svg {
     stroke: black; //Нужно удалить после того как все дадут стили своим свгшкам
 }
@@ -100,5 +105,14 @@ body {
 @media (max-width:$tablet) {
     .unmove-small {
         transform: translateX(0px) !important;
+    }
+}
+
+@keyframes opacity {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }
