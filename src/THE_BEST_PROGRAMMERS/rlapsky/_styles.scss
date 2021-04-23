@@ -189,6 +189,9 @@
     justify-content:center;
     }
     .weather-toggle-btn1 {
+        :hover{
+            color: #fff;
+        }
     align-items:center;
     background:rgba(255,255,255,0.5);
     border:none;
@@ -203,6 +206,12 @@
     padding:6px 40px;
     text-align:center;
     text-transform:uppercase;
+    }
+    .weather-toggle-btn1:focus,
+    .weather-toggle-btn1:focus,
+    .weather-toggle-btn2:hover,
+     .weather-toggle-btn1:hover{
+        background-color: #fff;
     }
     .weather-toggle-btn2 {
     align-items:center;
@@ -222,16 +231,21 @@
     }
     body {
     background-image:url(../THE_BEST_PROGRAMMERS/rlapsky/images/city.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
     }
     .current {
         background:#FFF;
         }
     @media screen and (min-width: 480px) {
     .quotes {
+    position: relative;
     margin-right:20px;
     }
     .quotes__svg {
-    right:43px;
+    right: 0px;
+    top: -15px;
     }
     .today,.today-info {
     width:420px;
@@ -242,18 +256,20 @@
     }
     @media screen and (min-width: 768px) {
     .quotes {
+    position: relative;
     font-size:22px;
     font-weight:400;
     line-height:26px;
     width:379px;
+    margin-right: 60px;
     }
     .quotes__autor {
     text-align:right;
     }
     .quotes__svg {
     height:45.7px;
-    right:102px;
-    top:989.7px;
+    right: 0px;
+    top: -15px;
     width:49.42px;
     }
     .square-1 {
